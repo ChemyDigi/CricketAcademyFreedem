@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "title": "Personal Coaching",
+        "icon": "User",
+        "description": "One-on-one sessions tailored to individual strengths and weaknesses.",
+        "price": "$50/session"
+    },
+    {
+        "id": "2",
+        "title": "Group Training",
+        "icon": "Users",
+        "description": "Collaborative sessions focusing on teamwork, drills, and match simulations.",
+        "price": "$150/month"
+    },
+    {
+        "id": "3",
+        "title": "Video Analysis",
+        "icon": "Video",
+        "description": "Advanced technical analysis using high-speed cameras and software.",
+        "price": "$30/session"
+    },
+    {
+        "id": "4",
+        "title": "Fitness & Conditioning",
+        "icon": "Activity",
+        "description": "Cricket-specific fitness programs to enhance stamina and agility.",
+        "price": "$100/month"
+    }
+]

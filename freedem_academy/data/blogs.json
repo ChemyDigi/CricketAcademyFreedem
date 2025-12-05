@@ -1,0 +1,29 @@
+[
+    {
+        "id": "1",
+        "title": "Mastering the Cover Drive",
+        "author": "Arjun Mehta",
+        "date": "2025-01-15",
+        "excerpt": "Learn the mechanics of the most elegant shot in cricket with our step-by-step guide.",
+        "content": "Full content about cover drive technique...",
+        "image": "/images/blog1.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Mental Toughness in Cricket",
+        "author": "Dr. A. Singh",
+        "date": "2025-02-01",
+        "excerpt": "How to handle pressure in crunch situations and maintain focus.",
+        "content": "Full content about psychology...",
+        "image": "/images/blog2.jpg"
+    },
+    {
+        "id": "3",
+        "title": "The Art of Spin Bowling",
+        "author": "Ravi K.",
+        "date": "2025-02-20",
+        "excerpt": "Understanding drift, dip, and turn to baffle batsmen.",
+        "content": "Full content about spin bowling...",
+        "image": "/images/blog3.jpg"
+    }
+]

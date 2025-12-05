@@ -1,0 +1,40 @@
+[
+    {
+        "id": "1",
+        "name": "Arjun Mehta",
+        "role": "Head Coach",
+        "image": "/images/coach1.jpg",
+        "specialty": "Batting & Strategy",
+        "experience": "15 Years",
+        "bio": "Former state-level player with a passion for grooming young talent. Expert in modern batting techniques.",
+        "achievements": [
+            "State Championship 2018",
+            "Coach of the Year 2020"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Sarah Jenkins",
+        "role": "Bowling Coach",
+        "image": "/images/coach2.jpg",
+        "specialty": "Fast Bowling",
+        "experience": "10 Years",
+        "bio": "Specializes in pace and swing. Has analyzing biomechanics to prevent injuries.",
+        "achievements": [
+            "National Pacer Award",
+            "U-19 Team Consultant"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Rohan Das",
+        "role": "Fielding Coach",
+        "image": "/images/coach3.jpg",
+        "specialty": "Agility & Reflexes",
+        "experience": "8 Years",
+        "bio": "Focuses on high-intensity fielding drills and reflex training.",
+        "achievements": [
+            "Best Fielder 2015 (Regional)"
+        ]
+    }
+]
