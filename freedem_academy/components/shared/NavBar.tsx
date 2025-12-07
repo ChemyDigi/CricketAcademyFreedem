@@ -26,8 +26,8 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold tracking-widest text-white uppercase italic">
-              FREDEM <span className="text-primary">ACADEMY</span>
+            <Link href="/">
+              <img src="/FreedemLogo.png" alt="Freedem Academy Logo" className="h-18 w-auto" />
             </Link>
           </div>
           <div className="hidden md:block">
@@ -37,13 +37,16 @@ export default function NavBar() {
                   key={link.name}
                   href={link.href}
                   className={clsx(
-                    "px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 uppercase tracking-wide",
+                    "relative px-3 py-2 text-sm font-medium transition-colors duration-300 uppercase tracking-wide",
                     pathname === link.href
-                      ? "text-primary bg-white/5"
-                      : "text-gray-300 hover:text-white hover:bg-white/5"
+                      ? "text-primary"
+                      : "text-gray-300 hover:text-white"
                   )}
                 >
                   {link.name}
+                  {pathname === link.href && (
+                    <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full" />
+                  )}
                 </Link>
               ))}
             </div>
