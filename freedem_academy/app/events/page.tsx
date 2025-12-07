@@ -1,10 +1,10 @@
 
-import NavBar from "../../components/NavBar";
-import HeroSection from "../../components/HeroSection";
-import Footer from "../../components/Footer";
-import EventsCalendarSection from "../../components/EventsCalendarSection";
-import UpcomingEvents from "../../components/UpcomingEvents";
-import { PastScoresTable, WinnersHighlight } from "../../components/EventsWidgets";
+import NavBar from "../../components/shared/NavBar";
+import HeroSection from "../../components/shared/HeroSection";
+import Footer from "../../components/shared/Footer";
+import EventsCalendarSection from "../../components/events/EventsCalendarSection";
+import UpcomingEvents from "../../components/events/UpcomingEvents";
+import { PastScoresTable, WinnersHighlight } from "../../components/events/EventsWidgets";
 
 export default function EventsPage() {
   return (

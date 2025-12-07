@@ -1,6 +1,6 @@
 
-import EventCard from "./EventCard";
-import eventsData from "../data/events.json";
+import EventCard from "../shared/EventCard";
+import eventsData from "../../data/events.json";
 
 export default function UpcomingEvents() {
   return (

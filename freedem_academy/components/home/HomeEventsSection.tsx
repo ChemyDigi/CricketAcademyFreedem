@@ -1,6 +1,6 @@
 
-import EventCard from "./EventCard";
-import eventsData from "../data/events.json";
+import EventCard from "../shared/EventCard";
+import eventsData from "../../data/events.json";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 

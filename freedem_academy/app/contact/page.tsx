@@ -1,10 +1,10 @@
 
-import NavBar from "../../components/NavBar";
-import HeroSection from "../../components/HeroSection";
-import Footer from "../../components/Footer";
-import ContactForm from "../../components/ContactForm";
-import FAQAccordion from "../../components/FAQAccordion";
-import GoogleMapEmbed from "../../components/GoogleMapEmbed";
+import NavBar from "../../components/shared/NavBar";
+import HeroSection from "../../components/shared/HeroSection";
+import Footer from "../../components/shared/Footer";
+import ContactForm from "../../components/contact/ContactForm";
+import FAQAccordion from "../../components/contact/FAQAccordion";
+import GoogleMapEmbed from "../../components/contact/GoogleMapEmbed";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {

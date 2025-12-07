@@ -1,6 +1,6 @@
 
-import ServicesCard from "./ServicesCard";
-import servicesData from "../data/services.json";
+import ServicesCard from "../shared/ServicesCard";
+import servicesData from "../../data/services.json";
 import { User, Users, Video, Activity } from "lucide-react";
 
 // Map icon strings to components

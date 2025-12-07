@@ -1,6 +1,6 @@
 
-import NavBar from "../../../components/NavBar";
-import Footer from "../../../components/Footer";
+import NavBar from "../../../components/shared/NavBar";
+import Footer from "../../../components/shared/Footer";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import Link from "next/link";
 import blogsData from "../../../data/blogs.json";

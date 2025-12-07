@@ -1,11 +1,11 @@
 
-import NavBar from "../../components/NavBar";
-import HeroSection from "../../components/HeroSection";
-import Footer from "../../components/Footer";
-import StatsSection from "../../components/StatsSection";
-import { AboutIntro, AboutDetails } from "../../components/AboutSections";
-import CoachesGrid from "../../components/CoachesGrid"; // Reusing CoachesGrid
-import ImageGalleryGrid from "../../components/ImageGalleryGrid";
+import NavBar from "../../components/shared/NavBar";
+import HeroSection from "../../components/shared/HeroSection";
+import Footer from "../../components/shared/Footer";
+import StatsSection from "../../components/about/StatsSection";
+import { AboutIntro, AboutDetails } from "../../components/about/AboutSections";
+import CoachesGrid from "../../components/about/CoachesGrid"; // Reusing CoachesGrid
+import ImageGalleryGrid from "../../components/shared/ImageGalleryGrid";
 
 export default function AboutPage() {
   return (

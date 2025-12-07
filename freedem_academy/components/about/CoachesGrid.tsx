@@ -1,6 +1,6 @@
 
 import CoachCard from "./CoachCard";
-import coachesData from "../data/coaches.json";
+import coachesData from "../../data/coaches.json";
 
 export default function CoachesGrid() {
   return (

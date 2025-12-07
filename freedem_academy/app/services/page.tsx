@@ -1,9 +1,9 @@
 
-import NavBar from "../../components/NavBar";
-import HeroSection from "../../components/HeroSection";
-import Footer from "../../components/Footer";
-import ServicesIntro from "../../components/ServicesIntro";
-import ServicesGrid from "../../components/ServicesGrid";
+import NavBar from "../../components/shared/NavBar";
+import HeroSection from "../../components/shared/HeroSection";
+import Footer from "../../components/shared/Footer";
+import ServicesIntro from "../../components/services/ServicesIntro";
+import ServicesGrid from "../../components/services/ServicesGrid";
 
 export default function ServicesPage() {
   return (

@@ -1,11 +1,11 @@
 
-import NavBar from "../components/NavBar";
-import HeroSection from "../components/HeroSection";
-import HomeIntroSection from "../components/HomeIntroSection";
-import HomeServicesSection from "../components/HomeServicesSection";
-import HomeEventsSection from "../components/HomeEventsSection";
-import FacilitiesSection from "../components/FacilitiesSection";
-import Footer from "../components/Footer";
+import NavBar from "../components/shared/NavBar";
+import HeroSection from "../components/shared/HeroSection";
+import HomeIntroSection from "../components/home/HomeIntroSection";
+import HomeServicesSection from "../components/home/HomeServicesSection";
+import HomeEventsSection from "../components/home/HomeEventsSection";
+import FacilitiesSection from "../components/home/FacilitiesSection";
+import Footer from "../components/shared/Footer";
 
 export default function Home() {
   return (

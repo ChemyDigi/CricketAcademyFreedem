@@ -1,8 +1,8 @@
 
-import NavBar from "../../components/NavBar";
-import HeroSection from "../../components/HeroSection";
-import Footer from "../../components/Footer";
-import CoachesGrid from "../../components/CoachesGrid";
+import NavBar from "../../components/shared/NavBar";
+import HeroSection from "../../components/shared/HeroSection";
+import Footer from "../../components/shared/Footer";
+import CoachesGrid from "../../components/about/CoachesGrid";
 
 export default function ProfilesPage() {
   return (

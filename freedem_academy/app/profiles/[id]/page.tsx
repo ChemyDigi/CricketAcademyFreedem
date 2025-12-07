@@ -1,6 +1,6 @@
 
-import NavBar from "../../../components/NavBar";
-import Footer from "../../../components/Footer";
+import NavBar from "../../../components/shared/NavBar";
+import Footer from "../../../components/shared/Footer";
 import { ArrowLeft, Trophy, Star } from "lucide-react";
 import Link from "next/link";
 import coachesData from "../../../data/coaches.json";

@@ -1,8 +1,8 @@
 
-import NavBar from "../../components/NavBar";
-import HeroSection from "../../components/HeroSection";
-import Footer from "../../components/Footer";
-import BlogsGrid from "../../components/BlogsGrid";
+import NavBar from "../../components/shared/NavBar";
+import HeroSection from "../../components/shared/HeroSection";
+import Footer from "../../components/shared/Footer";
+import BlogsGrid from "../../components/blogs/BlogsGrid";
 
 export default function BlogsPage() {
   return (

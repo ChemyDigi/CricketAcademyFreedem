@@ -1,6 +1,6 @@
 
 import BlogCard from "./BlogCard";
-import blogsData from "../data/blogs.json";
+import blogsData from "../../data/blogs.json";
 
 export default function BlogsGrid() {
   return (
