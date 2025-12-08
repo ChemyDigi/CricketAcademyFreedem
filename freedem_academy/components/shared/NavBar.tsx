@@ -54,7 +54,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Link href="/">
-              <img src="/FreedemLogo.png" alt="Freedem Academy Logo" className="h-30 w-auto" />
+              <img src="/FreedemLogo.png" alt="Freedem Academy Logo" className="h-16 md:h-30 w-auto" />
             </Link>
           </div>
           <div className="hidden md:block">
