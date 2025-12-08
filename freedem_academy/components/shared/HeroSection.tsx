@@ -8,13 +8,15 @@ interface HeroSectionProps {
   subtitle?: string;
   backgroundImage?: string;
   isHome?: boolean;
+  showBlackOverlay?: boolean;
 }
 
-export default function HeroSection({
-  title,
-  subtitle,
-  backgroundImage = "/home/hero.png",
+export default function HeroSection({ 
+  title, 
+  subtitle, 
+  backgroundImage = "/home/hero.png", 
   isHome = false,
+  showBlackOverlay = false
 }: HeroSectionProps) {
   return (
     <section className="relative h-[20vh] md:h-[100vh] w-full flex items-center justify-center overflow-hidden">

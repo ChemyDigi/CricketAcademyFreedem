@@ -11,7 +11,7 @@ export default function GalleryPage() {
       <HeroSection 
         title="Gallery"
         subtitle="Moments of glory, training sessions, and academy life."
-        backgroundImage="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        backgroundImage="/gallery/hero_image.png"
       />
       <ImageGalleryGrid />
       <Footer />
