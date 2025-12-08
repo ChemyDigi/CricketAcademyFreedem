@@ -1,3 +1,4 @@
+"use client";
 
 import ServicesCard from "../shared/ServicesCard";
 import servicesData from "../../data/services.json";
