@@ -24,7 +24,7 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
     <main className="min-h-screen bg-[#0B0B0D]">
       <NavBar />
       
-      <div className="pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-32 pb-20 max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <Link href="/profiles" className="inline-flex items-center text-gray-400 hover:text-white mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Coaches
         </Link>
