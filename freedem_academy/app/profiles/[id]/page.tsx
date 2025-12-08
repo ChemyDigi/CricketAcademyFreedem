@@ -29,7 +29,7 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Coaches
         </Link>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           {/* Image Side */}
           <div className="relative h-[600px] bg-[#121214] rounded-lg overflow-hidden border border-white/5">
              <div 
@@ -75,69 +75,69 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
                    )}
                 </div>
               )}
-
-              {/* Specialization */}
-              {(coach.specialization || coach.specializationDescription) && (
-                 <div>
-                  <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Specialization</h3>
-                  {coach.specializationDescription && (
-                    <p className="text-gray-400 mb-4">{coach.specializationDescription}</p>
-                  )}
-                  {coach.specialization && Array.isArray(coach.specialization) && (
-                     <div className="flex flex-wrap gap-2">
-                        {coach.specialization.map((spec, idx) => (
-                           <span key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
-                             {spec}
-                           </span>
-                        ))}
-                     </div>
-                  )}
-                 </div>
-              )}
-              
-               {/* Experience */}
-               {(coach.experience || coach.experienceDescription) && (
-                <div>
-                  <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Experience</h3>
-                  {coach.experienceDescription && (
-                     <p className="text-gray-400 mb-4">{coach.experienceDescription}</p>
-                  )}
-                  {coach.experience && Array.isArray(coach.experience) && (
-                     <ul className="space-y-3">
-                        {coach.experience.map((exp, idx) => (
-                          <li key={idx} className="flex items-start text-gray-300">
-                             <Star className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                             <span>{exp}</span>
-                          </li>
-                        ))}
-                     </ul>
-                  )}
-                </div>
-               )}
-
-              {/* Achievements */}
-              {(coach.achievements || coach.achievementDescription) && (
-                <div>
-                  <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Achievements</h3>
-                  {coach.achievementDescription && (
-                     <p className="text-gray-400 mb-4">{coach.achievementDescription}</p>
-                  )}
-                  {coach.achievements && coach.achievements.length > 0 && (
-                    <ul className="space-y-3">
-                      {coach.achievements.map((item, idx) => (
-                        <li key={idx} className="flex items-start text-gray-400">
-                          <Trophy className="w-4 h-4 text-primary mr-3 flex-shrink-0 mt-1" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              )}
             </div>
             
           </div>
         </div>
+
+        {/* Specialization - Full Width */}
+        {(coach.specialization || coach.specializationDescription) && (
+          <div className="w-full mb-12">
+            <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Specialization</h3>
+            {coach.specializationDescription && (
+              <p className="text-gray-400 mb-4">{coach.specializationDescription}</p>
+            )}
+            {coach.specialization && Array.isArray(coach.specialization) && (
+              <div className="flex flex-wrap gap-2">
+                {coach.specialization.map((spec, idx) => (
+                  <span key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
+                    {spec}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Experience - Full Width */}
+        {(coach.experience || coach.experienceDescription) && (
+          <div className="w-full mb-12">
+            <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Experience</h3>
+            {coach.experienceDescription && (
+              <p className="text-gray-400 mb-4">{coach.experienceDescription}</p>
+            )}
+            {coach.experience && Array.isArray(coach.experience) && (
+              <ul className="space-y-3">
+                {coach.experience.map((exp, idx) => (
+                  <li key={idx} className="flex items-start text-gray-300">
+                    <Star className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                    <span>{exp}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+
+        {/* Achievements - Full Width */}
+        {(coach.achievements || coach.achievementDescription) && (
+          <div className="w-full">
+            <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Achievements</h3>
+            {coach.achievementDescription && (
+              <p className="text-gray-400 mb-4">{coach.achievementDescription}</p>
+            )}
+            {coach.achievements && coach.achievements.length > 0 && (
+              <ul className="space-y-3">
+                {coach.achievements.map((item, idx) => (
+                  <li key={idx} className="flex items-start text-gray-400">
+                    <Trophy className="w-4 h-4 text-primary mr-3 flex-shrink-0 mt-1" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
       </div>
       
       <Footer />
