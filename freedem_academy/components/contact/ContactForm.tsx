@@ -11,7 +11,7 @@ export default function ContactForm() {
                   type="text" 
                   id="firstName"
                   className="w-full bg-[#0B0B0D] border border-white/10 text-white p-3 focus:outline-none focus:border-primary transition-colors"
-                  placeholder="fist name"
+                  placeholder="first name"
               />
             </div>
             <div>
