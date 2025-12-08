@@ -13,7 +13,8 @@ export default function EventsPage() {
       <HeroSection 
         title="Events & Tournaments"
         subtitle="Stay updated with our latest matches, camps, and academy events."
-        backgroundImage="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        backgroundImage="event/eventHero.jpg"
+        showBlackOverlay={true}
       />
       
       <EventsCalendarSection />

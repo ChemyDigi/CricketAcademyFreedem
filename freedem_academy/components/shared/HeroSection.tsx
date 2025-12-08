@@ -6,13 +6,15 @@ interface HeroSectionProps {
   subtitle?: string;
   backgroundImage?: string;
   isHome?: boolean;
+  showBlackOverlay?: boolean;
 }
 
 export default function HeroSection({ 
   title, 
   subtitle, 
   backgroundImage = "/home/hero.png", 
-  isHome = false 
+  isHome = false,
+  showBlackOverlay = false
 }: HeroSectionProps) {
   return (
     <section className="relative h-[20vh] md:h-[100vh] w-full flex items-center justify-center overflow-hidden">
@@ -25,6 +27,10 @@ export default function HeroSection({
            className="absolute inset-0 opacity-12\00 bg-cover bg-center" 
            style={{ backgroundImage: `url(${backgroundImage})` }}
          />
+        {/* Black overlay for events page */}
+        {showBlackOverlay && (
+          <div className="absolute inset-0 bg-black/50" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-[#0B0B0D]/60 to-transparent" />
       </div>
 
