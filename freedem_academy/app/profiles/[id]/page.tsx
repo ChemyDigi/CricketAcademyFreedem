@@ -34,7 +34,7 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
           <div className="relative h-[600px] bg-[#121214] rounded-lg overflow-hidden border border-white/5">
              <div 
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${coach.image})` }} 
+                style={{ backgroundImage: `url(${coach.readmoreimage})` }} 
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           </div>
@@ -57,7 +57,7 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
               <div>
                 <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Specialty</h3>
                 <p className="text-white font-medium">
-                  {coach.specialty}
+                  {coach.specialization}
                 </p>
               </div>
               
