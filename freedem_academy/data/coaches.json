@@ -46,8 +46,8 @@
     "id": "himasha-kumarage",
     "name": "Himasha Kumarage",
     "role": "Ladies Head Coach",
-    "image": "/images/profile/coaches/Himasha.jpg",
-    "readmoreimage": "/images/profile/coaches/HimashaRemoved.png",
+    "image": "/coaches/himasha.png",
+    "readmoreimage": "/coaches/himasha.png",
 
     "qualificationDescription": "Her strong coaching and umpiring certifications reflect a well-rounded understanding of cricket and the discipline required to guide young athletes.",
     "qualifications": [
@@ -116,8 +116,8 @@
     "id": "gihan-lakshitha",
     "name": "Gihan Lakshitha ",
     "role": "Assistant Coach ",
-    "image": "/images/profile/coaches/gihan.jpg",
-    "readmoreimage": "/images/profile/coaches/GihanRemoved.png",
+    "image": "/coaches/gihan.png",
+    "readmoreimage": "/coaches/gihan.png",
 
     "experienceDescription": "Gihan has supported school cricket programs by helping young players strengthen their basics and build confidence on the field.",
     "experience": [
@@ -141,8 +141,8 @@
     "id": "anuhas-dasanayaka",
     "name": "Anuhas Dasanayaka",
     "role": "Coach",
-    "image": "/images/profile/coaches/Anuhas.jpg",
-    "readmoreimage": "/images/profile/coaches/AnuhasRemoved.png",
+    "image": "/coaches/anuhas.png",
+    "readmoreimage": "/coaches/anuhas.png",
 
     "qualificationDescription": "Anuhas has achieved respected ICC coaching certification, showcasing his technical understanding and commitment to player development.",
     "qualifications": [
