@@ -9,7 +9,6 @@ import clsx from "clsx";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Events", href: "/events" },
-  { name: "Services", href: "/services" },
   { name: "Profiles", href: "/profiles" },
   { name: "Blogs", href: "/blogs" },
   { name: "About", href: "/about" },
@@ -22,12 +21,12 @@ export default function NavBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed w-full z-50 backdrop-blur-md">
+    <nav className="fixed w-full z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Link href="/">
-              <img src="/FreedemLogo.png" alt="Freedem Academy Logo" className="h-18 w-auto" />
+              <img src="/FreedemLogo.png" alt="Freedem Academy Logo" className="h-30 w-auto" />
             </Link>
           </div>
           <div className="hidden md:block">
