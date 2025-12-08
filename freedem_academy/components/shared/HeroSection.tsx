@@ -8,13 +8,15 @@ interface HeroSectionProps {
   subtitle?: string;
   backgroundImage?: string;
   isHome?: boolean;
+  showBlackOverlay?: boolean;
 }
 
-export default function HeroSection({
-  title,
-  subtitle,
-  backgroundImage = "/home/hero.png",
+export default function HeroSection({ 
+  title, 
+  subtitle, 
+  backgroundImage = "/home/hero.png", 
   isHome = false,
+  showBlackOverlay = false
 }: HeroSectionProps) {
   return (
     <section className="relative h-[20vh] md:h-[100vh] w-full flex items-center justify-center overflow-hidden">
@@ -52,7 +54,7 @@ export default function HeroSection({
 
         {subtitle && (
           <motion.p
-            className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed"
+            className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}

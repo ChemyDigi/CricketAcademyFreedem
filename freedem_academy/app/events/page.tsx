@@ -14,6 +14,7 @@ export default function EventsPage() {
         title="Events & Tournaments"
         subtitle="Stay updated with our latest matches, camps, and academy events."
         backgroundImage="/events/hero_image.png"
+
       />
       
       <EventsCalendarSection />
