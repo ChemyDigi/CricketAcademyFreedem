@@ -1,32 +1,32 @@
 [
     {
         "id": "1",
-        "title": "Summer Cricket Camp",
-        "date": "2025-06-15",
-        "time": "09:00 AM - 04:00 PM",
+        "title": "Junior Selection Trials",
+        "date": "2025-12-05",
+        "time": "08:00 AM - 02:00 PM",
         "location": "Main Ground",
-        "description": "Intensive 3-week camp for U-16 players focusing on all-round development.",
-        "category": "camp",
-        "status": "upcoming"
+        "description": "Selection trials for the U-13 and U-15 academy teams.",
+        "category": "selection",
+        "status": "past"
     },
     {
         "id": "2",
-        "title": "Inter-Academy T20 League",
-        "date": "2025-07-10",
-        "time": "10:00 AM Onwards",
-        "location": "City Stadium",
-        "description": "Competitive league matches against top local academies.",
-        "category": "tournament",
+        "title": "Annual Awards Night",
+        "date": "2025-12-20",
+        "time": "06:00 PM",
+        "location": "Academy Hall",
+        "description": "Celebrating the achievements of our players and coaches for the year 2025.",
+        "category": "ceremony",
         "status": "upcoming"
     },
     {
         "id": "3",
-        "title": "Annual Awards Night",
-        "date": "2024-12-20",
-        "time": "06:00 PM",
-        "location": "Academy Hall",
-        "description": "Celebrating the achievements of our players and coaches.",
-        "category": "ceremony",
-        "status": "past"
+        "title": "End of Year Party",
+        "date": "2025-12-28",
+        "time": "05:00 PM Onwards",
+        "location": "Club House",
+        "description": "Fun gathering for all academy members and families.",
+        "category": "social",
+        "status": "upcoming"
     }
 ]
