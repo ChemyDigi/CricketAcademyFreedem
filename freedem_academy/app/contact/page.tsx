@@ -14,7 +14,7 @@ export default function ContactPage() {
       <HeroSection 
         title="Contact Us" 
         subtitle="We'd love to hear from you. Reach out for enrollments or queries."
-        backgroundImage="https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        backgroundImage="/contact/hero_image.png"
       />
       
       <section className="py-20 bg-[#0B0B0D]">
