@@ -135,14 +135,13 @@ export default function HomeIntroSection() {
             <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-20" />
 
             <motion.div
-              className="relative h-[500px] w-full bg-[#121214] border border-white/10 p-2 rounded-lg transform rotate-3 hover:rotate-0 transition-transform duration-500"
-              whileHover={{ scale: 1.02 }}
+              className="relative h-[500px] w-full bg-[#121214] border border-white/10 p-2 rounded-lg"
             >
               <div
-                className="w-full h-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    'url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")',
+                    'url("/home/HomeIntro.jpg")',
                 }}
               />
             </motion.div>
