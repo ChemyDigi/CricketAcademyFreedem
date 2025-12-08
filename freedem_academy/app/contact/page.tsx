@@ -25,21 +25,22 @@ export default function ContactPage() {
                      <Phone className="text-primary w-8 h-8 group-hover:text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white uppercase mb-2">Call Us</h3>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
+                  <p className="text-gray-400">+971 58 208 6656</p>
                </div>
                <div className="bg-[#121214] p-8 text-center border border-white/5 rounded-lg group hover:border-primary transition-colors">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
                      <Mail className="text-primary w-8 h-8 group-hover:text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white uppercase mb-2">Email Us</h3>
-                  <p className="text-gray-400">info@freedemacademy.com</p>
+                  <p className="text-gray-400">Freedem.academy@gmail.com</p>
                </div>
                <div className="bg-[#121214] p-8 text-center border border-white/5 rounded-lg group hover:border-primary transition-colors">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
                      <MapPin className="text-primary w-8 h-8 group-hover:text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white uppercase mb-2">Visit Us</h3>
-                  <p className="text-gray-400">123 Sports City, NY</p>
+                  <p className="text-gray-400">Oud Metha Road,<br />
+                  Oud Metha,<br /> Umm Hurair Second, <br /> Dubai,<br /> United Arab Emirates</p>
                </div>
             </div>
 
