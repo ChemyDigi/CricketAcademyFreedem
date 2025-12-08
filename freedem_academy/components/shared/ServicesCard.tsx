@@ -1,5 +1,7 @@
+"use client";
 
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ServiceCardProps {
   title: string;
@@ -9,7 +11,13 @@ interface ServiceCardProps {
 
 export default function ServicesCard({ title, description, icon: Icon }: ServiceCardProps) {
   return (
-    <div className="group relative p-8 bg-[#121214] border border-white/5 hover:border-primary/50 transition-all duration-300 overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="group relative p-8 bg-[#121214] border border-white/5 hover:border-primary/50 transition-all duration-300 overflow-hidden"
+    >
       <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-150 duration-500" />
       
       <div className="relative z-10">
@@ -27,6 +35,6 @@ export default function ServicesCard({ title, description, icon: Icon }: Service
           <ArrowRight className="w-4 h-4 ml-1" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

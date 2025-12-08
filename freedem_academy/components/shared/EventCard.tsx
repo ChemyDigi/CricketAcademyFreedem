@@ -35,9 +35,7 @@ export default function EventCard({ title, date, time, location, category }: Eve
         </div>
       </div>
       
-      <button className="mt-6 w-full py-2 border border-white/20 text-white text-xs font-bold uppercase hover:bg-white hover:text-black transition-all duration-300">
-        Register Now
-      </button>
+
     </div>
   );
 }
