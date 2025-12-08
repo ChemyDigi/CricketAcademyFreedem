@@ -40,13 +40,15 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
           </div>
           
           {/* Info Side */}
+          {/* Info Side */}
           <div>
             <span className="block text-primary font-bold tracking-widest uppercase mb-2">
               {coach.role}
             </span>
             <h1 className="text-5xl font-black text-white uppercase mb-8">{coach.name}</h1>
             
-            <div className="space-y-8">
+            <div className="space-y-10">
+              {/* Biography */}
               <div>
                 <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Biography</h3>
                 <p className="text-gray-400 leading-relaxed text-lg">
@@ -54,32 +56,84 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
                 </p>
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Specialty</h3>
-                <p className="text-white font-medium">
-                  {coach.specialization}
-                </p>
-              </div>
-              
-               <div>
-                <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Experience</h3>
-                <div className="flex items-center gap-2 text-primary">
-                   <Star className="w-5 h-5" />
-                   <span className="text-white font-bold text-2xl">{coach.experience}</span>
+              {/* Qualifications */}
+              {(coach.qualifications || coach.qualificationDescription) && (
+                <div>
+                   <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Qualifications</h3>
+                   {coach.qualificationDescription && (
+                     <p className="text-gray-400 mb-4">{coach.qualificationDescription}</p>
+                   )}
+                   {coach.qualifications && (
+                     <ul className="space-y-2">
+                       {coach.qualifications.map((qual, idx) => (
+                         <li key={idx} className="flex items-start text-white font-medium">
+                           <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0" />
+                           {qual}
+                         </li>
+                       ))}
+                     </ul>
+                   )}
                 </div>
-              </div>
+              )}
 
-              <div>
-                <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Achievements</h3>
-                <ul className="space-y-3">
-                  {coach.achievements.map((item, idx) => (
-                    <li key={idx} className="flex items-center text-gray-400">
-                      <Trophy className="w-4 h-4 text-primary mr-3" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/* Specialization */}
+              {(coach.specialization || coach.specializationDescription) && (
+                 <div>
+                  <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Specialization</h3>
+                  {coach.specializationDescription && (
+                    <p className="text-gray-400 mb-4">{coach.specializationDescription}</p>
+                  )}
+                  {coach.specialization && Array.isArray(coach.specialization) && (
+                     <div className="flex flex-wrap gap-2">
+                        {coach.specialization.map((spec, idx) => (
+                           <span key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
+                             {spec}
+                           </span>
+                        ))}
+                     </div>
+                  )}
+                 </div>
+              )}
+              
+               {/* Experience */}
+               {(coach.experience || coach.experienceDescription) && (
+                <div>
+                  <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Experience</h3>
+                  {coach.experienceDescription && (
+                     <p className="text-gray-400 mb-4">{coach.experienceDescription}</p>
+                  )}
+                  {coach.experience && Array.isArray(coach.experience) && (
+                     <ul className="space-y-3">
+                        {coach.experience.map((exp, idx) => (
+                          <li key={idx} className="flex items-start text-gray-300">
+                             <Star className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                             <span>{exp}</span>
+                          </li>
+                        ))}
+                     </ul>
+                  )}
+                </div>
+               )}
+
+              {/* Achievements */}
+              {(coach.achievements || coach.achievementDescription) && (
+                <div>
+                  <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Achievements</h3>
+                  {coach.achievementDescription && (
+                     <p className="text-gray-400 mb-4">{coach.achievementDescription}</p>
+                  )}
+                  {coach.achievements && coach.achievements.length > 0 && (
+                    <ul className="space-y-3">
+                      {coach.achievements.map((item, idx) => (
+                        <li key={idx} className="flex items-start text-gray-400">
+                          <Trophy className="w-4 h-4 text-primary mr-3 flex-shrink-0 mt-1" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
             </div>
             
           </div>
