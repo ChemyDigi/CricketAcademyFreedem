@@ -11,7 +11,7 @@ export default function ProfilesPage() {
       <HeroSection 
         title="Our Coaches" 
         subtitle="Meet the experts dedicated to shaping your future."
-        backgroundImage="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        backgroundImage="/coaches/hero_image.png"
       />
       <CoachesGrid />
       <Footer />
