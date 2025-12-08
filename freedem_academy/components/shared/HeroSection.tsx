@@ -54,7 +54,7 @@ export default function HeroSection({
 
         {subtitle && (
           <motion.p
-            className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed"
+            className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
