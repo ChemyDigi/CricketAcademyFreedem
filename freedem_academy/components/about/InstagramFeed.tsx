@@ -42,7 +42,7 @@ export default function InstagramFeed() {
         </div>
 
         {/* Masonry-style Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-[400px]">
           {/* Main Large Image */}
           <div className="md:col-span-2 md:row-span-2 relative group rounded-2xl overflow-hidden h-[400px] md:h-full">
              <Image

@@ -6,12 +6,10 @@
     "image": "/coaches/hiran.png",
     "readmoreimage": "/coaches/hiran_inside.png",
     "bio": "With over 15 years of coaching excellence in Sri Lanka and the UAE, Hiran has built a reputation for transforming teams and producing top-performing players. Renowned for his technical mastery and player development skills, he continues to inspire cricketers to reach their highest potential.",
-
     "qualificationDescription": "Hiran’s internationally recognized qualifications highlight his strong technical foundation and commitment to elite coaching standards.",
     "qualifications": [
       "ICC Level 02"
     ],
-
     "experienceDescription": "With an extensive coaching career across top Sri Lankan schools and clubs, Hiran has consistently developed skilled players and competitive teams.",
     "experience": [
       "Head Coach - Old Anthony’s Cricket Club, Sri Lanka (2022, Div 1)",
@@ -20,7 +18,6 @@
       "Head Coach - St. Johns College, Sri Lanka (2015–2017)",
       "Head Coach - Siri Piyarathana College (2014–2015)"
     ],
-
     "achievementDescription": "Hiran’s cricketing achievements reflect a remarkable playing career, marked by consistency, excellence, and national-level recognition.",
     "achievements": [
       "Nalanda College 1999–2000 Best Batsman / Colours Man",
@@ -29,7 +26,6 @@
       "U19 World Cup Squad (2000)",
       "Bloomfield Cricket Club Div 1 (2000–2006)"
     ],
-
     "specializationDescription": "He is highly respected for his ability to develop complete cricketers through technical, tactical, and high-performance player development.",
     "specialization": [
       "Player Development",
@@ -41,30 +37,26 @@
       "Coaching Philosophy & Mentorship"
     ]
   },
-
   {
     "id": "himasha-kumarage",
     "name": "Himasha Kumarage",
     "role": "Ladies Head Coach",
     "image": "/coaches/himasha.png",
     "readmoreimage": "/coaches/himasha.png",
-
+    "bio": "As the Ladies Head Coach, Himasha brings a wealth of experience from her time in the UAE National Development Squad. Dedicated to nurturing the next generation of female cricketers, she focuses on building strong fundamentals and instilling discipline, making her a vital mentor for aspiring young athletes.",
     "qualificationDescription": "Her strong coaching and umpiring certifications reflect a well-rounded understanding of cricket and the discipline required to guide young athletes.",
     "qualifications": [
       "ICC Level 01 Coaching Certificate",
       "ICC Level 01 Umpiring Certificate"
     ],
-
     "experienceDescription": "With several years of coaching experience in the UAE, she has played a vital role in nurturing emerging female and junior cricketers.",
     "experience": [
       "3 years of experience with Freedem Cricket Academy UAE"
     ],
-
     "achievementDescription": "Her skill and dedication earned her a place in the UAE National Development Squad, showcasing her capability both as a player and leader.",
     "achievements": [
       "Represented the UAE National Development Squad"
     ],
-
     "specializationDescription": "She excels in developing young cricketers, especially girls, with a focus on building fundamentals, discipline, and match awareness.",
     "specialization": [
       "Under-10 Coaching",
@@ -73,27 +65,24 @@
       "Tournament Organizing"
     ]
   },
-
   {
     "id": "prajeev-jansze",
     "name": "Prajeev Jansze",
     "role": "Coach",
     "image": "/coaches/prajiv.png",
     "readmoreimage": "/coaches/prajiv_inside.png",
-
+    "bio": "With an impressive coaching career spanning over 14 years across Sri Lanka, New Zealand, Qatar, and the UAE, Prajeev brings a global perspective to player development. His track record of leading teams to championship victories highlights his ability to cultivate mental toughness and refine batting techniques for elite competition.",
     "qualificationDescription": "Prajeev’s multi-level certifications from BCCSL and ICC demonstrate his strong technical background and commitment to continuous growth.",
     "qualifications": [
       "BCCSL Level 1",
       "ICC Level 1",
       "ICC Level 2"
     ],
-
     "experienceDescription": "With over 14 years of international coaching experience across Sri Lanka, New Zealand, Qatar, and UAE, he brings global exposure and deep cricketing insight.",
     "experience": [
       "14+ years of coaching across Sri Lanka, New Zealand, Qatar, and UAE",
       "Has coached players at academy, school, and competitive levels"
     ],
-
     "achievementDescription": "He has contributed to multiple championship-winning teams, earning recognition in both domestic and international tournaments.",
     "achievements": [
       "New Zealand: Hazlett Trophy Champions (2012) – Wellington",
@@ -102,7 +91,6 @@
       "3× Gulf Cup Championships",
       "1× Four Nations Runner-Up"
     ],
-
     "specializationDescription": "Prajeev is known for refining batting techniques, building strong mental discipline, and preparing players for high-pressure competitive cricket.",
     "specialization": [
       "Specialist Batting Coach",
@@ -111,49 +99,43 @@
       "Mental Toughness Mentorship"
     ]
   },
-
   {
     "id": "gihan-lakshitha",
     "name": "Gihan Lakshitha ",
     "role": "Assistant Coach ",
     "image": "/coaches/gihan.png",
     "readmoreimage": "/coaches/gihan_inside.png",
-
+    "bio": "A passionate Assistant Coach and recipient of prestigious School Colours, Gihan is dedicated to strengthening the basics of young cricketers. His energetic approach and recent competitive experience allow him to connect effectively with beginners, helping them build confidence and a solid cricketing foundation.",
     "experienceDescription": "Gihan has supported school cricket programs by helping young players strengthen their basics and build confidence on the field.",
     "experience": [
       "6 months coaching at Anula Vidyalaya, Nugegoda",
       "6 months coaching at Lumbini College, Colombo 05"
     ],
-
     "achievementDescription": "His dedication and performance as a school cricketer earned him the prestigious School Colours award.",
     "achievements": [
       "Awarded School Colours – 2023"
     ],
-
     "specializationDescription": "He focuses on guiding beginner cricketers and shaping strong fundamental skills in batting, bowling, and fielding.",
     "specialization": [
       "Under-10 Coaching",
       "Player Fundamentals"
     ]
   },
-
   {
     "id": "anuhas-dasanayaka",
     "name": "Anuhas Dasanayaka",
     "role": "Coach",
     "image": "/coaches/anuhas.png",
     "readmoreimage": "/coaches/anuhas_inside.png",
-
+    "bio": "Anuhas is a dynamic coach with four years of experience and ICC Level 1 certification, known for his focus on modern training methods. Specializing in batting, wicket-keeping, and fitness, he is committed to developing well-rounded, mentally strong athletes ready for the demands of the game.",
     "qualificationDescription": "Anuhas has achieved respected ICC coaching certification, showcasing his technical understanding and commitment to player development.",
     "qualifications": [
       "ICC Level 1 Qualified"
     ],
-
     "experienceDescription": "With several years of coaching experience, he brings energy, discipline, and modern training methods to his players.",
     "experience": [
       "4 years of coaching experience"
     ],
-
     "specializationDescription": "He specializes in sharpening technical skills, improving fitness, and developing mentally strong and performance-ready athletes.",
     "specialization": [
       "Batting Specialist",

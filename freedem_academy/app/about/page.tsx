@@ -5,7 +5,7 @@ import Footer from "../../components/shared/Footer";
 import StatsSection from "../../components/about/StatsSection";
 import { AboutIntro, AboutDetails } from "../../components/about/AboutSections";
 import CoachesGrid from "../../components/about/CoachesGrid"; // Reusing CoachesGrid
-import InstagramFeed from "../../components/shared/InstagramFeed";
+import InstagramFeed from "../../components/about/InstagramFeed";
 
 export default function AboutPage() {
   return (
