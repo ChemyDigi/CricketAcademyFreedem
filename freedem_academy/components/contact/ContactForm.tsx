@@ -11,7 +11,7 @@ export default function ContactForm() {
                   type="text" 
                   id="firstName"
                   className="w-full bg-[#0B0B0D] border border-white/10 text-white p-3 focus:outline-none focus:border-primary transition-colors"
-                  placeholder="John"
+                  placeholder="fist name"
               />
             </div>
             <div>
@@ -20,7 +20,7 @@ export default function ContactForm() {
                   type="text" 
                   id="lastName"
                   className="w-full bg-[#0B0B0D] border border-white/10 text-white p-3 focus:outline-none focus:border-primary transition-colors"
-                  placeholder="Doe"
+                  placeholder="last name"
               />
             </div>
           </div>
@@ -31,7 +31,7 @@ export default function ContactForm() {
                 type="email" 
                 id="email"
                 className="w-full bg-[#0B0B0D] border border-white/10 text-white p-3 focus:outline-none focus:border-primary transition-colors"
-                placeholder="john@example.com"
+                placeholder="email address"
             />
           </div>
   
@@ -54,7 +54,7 @@ export default function ContactForm() {
                id="message"
                rows={4}
                className="w-full bg-[#0B0B0D] border border-white/10 text-white p-3 focus:outline-none focus:border-primary transition-colors"
-               placeholder="How can we help you?"
+               placeholder="how can we help you?"
             ></textarea>
           </div>
   

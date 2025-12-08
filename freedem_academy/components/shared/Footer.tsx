@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <img src="/FreedemLogo.png" alt="Freedem Academy Logo" width={200} height={50} className="mb-4" />
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <img src="/FreedemLogoFtr.png" alt="Freedem Academy Logo" width={160} height={50} className="mb-4" />
+            <p className="text-gray-400 text-sm leading-relaxed text-justify">
               At Freedom Cricket Academy, we help young players build skill, confidence, and teamwork through expert coaching and real-game experience
             </p>
           </div>
