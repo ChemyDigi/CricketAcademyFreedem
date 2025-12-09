@@ -51,7 +51,7 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
               {/* Biography */}
               <div>
                 <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Biography</h3>
-                <p className="text-gray-400 leading-relaxed text-lg">
+                <p className="text-gray-400 leading-relaxed">
                   {coach.bio}
                 </p>
               </div>
