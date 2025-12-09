@@ -20,7 +20,7 @@ export default function AboutPage() {
       <StatsSection />
       <AboutDetails />
       <div className="py-10 bg-[#0B0B0D]">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-white uppercase">Meet Our Mentors</h2>
          </div>
          <CoachesGrid />

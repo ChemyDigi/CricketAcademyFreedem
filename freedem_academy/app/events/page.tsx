@@ -20,7 +20,7 @@ export default function EventsPage() {
       <EventsCalendarSection />
 
       <section className="py-20 bg-[#0B0B0D]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
            <div className="mb-12">
               <span className="text-primary font-bold tracking-widest uppercase text-sm">What's Next</span>
               <h2 className="text-4xl font-black text-white uppercase mt-2">Upcoming Fixtures</h2>
@@ -30,7 +30,7 @@ export default function EventsPage() {
       </section>
 
       <section className="py-20 bg-[#08080A]">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                <div className="lg:col-span-2">
                   <PastScoresTable />

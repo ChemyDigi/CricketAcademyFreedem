@@ -14,7 +14,7 @@ const iconMap: { [key: string]: any } = {
 export default function HomeServicesSection() {
   return (
     <section className="py-24 bg-[#08080A]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-primary font-bold tracking-widest uppercase text-sm">What We Offer</span>
           <h2 className="text-4xl font-black text-white uppercase mt-2">Elite Training Programs</h2>

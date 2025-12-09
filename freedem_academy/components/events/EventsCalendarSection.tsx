@@ -58,7 +58,7 @@ export default function EventsCalendarSection() {
 
   return (
     <section className="py-16 bg-[#08080A]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className="bg-[#121214] p-8 border border-white/5 rounded-lg">
           <div className="flex justify-between items-center mb-8 flex-wrap gap-4">
             <h2 className="text-2xl font-bold text-white uppercase flex items-center gap-4">

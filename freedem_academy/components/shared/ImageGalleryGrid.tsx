@@ -49,7 +49,7 @@ export default function ImageGalleryGrid() {
 
   return (
     <section className="py-20 bg-[#0B0B0D]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((src, index) => (
             <div 

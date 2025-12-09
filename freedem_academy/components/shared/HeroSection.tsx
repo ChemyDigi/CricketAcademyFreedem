@@ -19,7 +19,7 @@ export default function HeroSection({
   showBlackOverlay = false
 }: HeroSectionProps) {
   return (
-    <section className="relative h-[20vh] md:h-[100vh] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-[60vh] md:h-[100vh] w-full flex items-center justify-center overflow-hidden">
       {/* Background Image Overlay */}
       <motion.div
         className="absolute inset-0 z-0"

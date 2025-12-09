@@ -33,7 +33,7 @@ function CountUp({ from = 0, to, duration = 1 }: CounterProps) {
 export default function HomeIntroSection() {
   return (
     <section className="py-20 bg-[#0B0B0D] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 

@@ -7,7 +7,7 @@ export function AboutIntro() {
   return (
     <section className="py-20 bg-[#0B0B0D]">
       <motion.div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -48,7 +48,7 @@ export function AboutIntro() {
 export function AboutDetails() {
   return (
     <section className="py-20 bg-[#08080A]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
           {/* LEFT TEXT BLOCK */}

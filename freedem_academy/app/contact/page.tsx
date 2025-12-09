@@ -18,7 +18,7 @@ export default function ContactPage() {
       />
       
       <section className="py-20 bg-[#0B0B0D]">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                <div className="bg-[#121214] p-8 text-center border border-white/5 rounded-lg group hover:border-primary transition-colors">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
