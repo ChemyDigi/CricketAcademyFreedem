@@ -28,5 +28,15 @@
         "description": "Fun gathering for all academy members and families.",
         "category": "social",
         "status": "upcoming"
+    },
+    {
+        "id": "1765307689801",
+        "title": "Hello Event",
+        "date": "2025-12-12",
+        "time": "09:00 AM - 12:00 AM",
+        "location": "Main Ground",
+        "description": "Hello event",
+        "category": "ceremony",
+        "status": "upcoming"
     }
 ]
