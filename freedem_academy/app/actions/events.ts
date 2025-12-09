@@ -69,3 +69,32 @@ export async function addEvent(formData: FormData) {
         return { success: false, error: "Failed to add event" };
     }
 }
+
+export async function getEvents() {
+    try {
+        const fileContent = await fs.readFile(EVENTS_FILE_PATH, "utf-8");
+        return JSON.parse(fileContent);
+    } catch (error) {
+        console.error("Error fetching events:", error);
+        return [];
+    }
+}
+
+export async function deleteEvent(id: string) {
+    try {
+        const fileContent = await fs.readFile(EVENTS_FILE_PATH, "utf-8");
+        let events = JSON.parse(fileContent);
+
+        events = events.filter((e: any) => e.id !== id);
+
+        await fs.writeFile(EVENTS_FILE_PATH, JSON.stringify(events, null, 4));
+
+        revalidatePath("/");
+        revalidatePath("/events");
+
+        return { success: true };
+    } catch (error) {
+        console.error("Error deleting event:", error);
+        return { success: false, error: "Failed to delete event" };
+    }
+}
