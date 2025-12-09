@@ -1,5 +1,5 @@
 
-import NavBar from "../../../components/shared/NavBar";
+
 import Footer from "../../../components/shared/Footer";
 import { ArrowLeft, Trophy, Star } from "lucide-react";
 import Link from "next/link";
@@ -23,7 +23,7 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-black via-[#0a0000] to-[#220000]">
-      <NavBar />
+
       
       <div className="pt-32 pb-20 max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <Link href="/profiles" className="inline-flex items-center text-gray-400 hover:text-white mb-8 transition-colors">

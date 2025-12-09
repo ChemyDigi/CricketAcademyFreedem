@@ -1,5 +1,5 @@
 
-import NavBar from "../components/shared/NavBar";
+
 import HeroSection from "../components/shared/HeroSection";
 import HomeIntroSection from "../components/home/HomeIntroSection";
 import HomeServicesSection from "../components/home/HomeServicesSection";
@@ -10,7 +10,7 @@ import Footer from "../components/shared/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0B0B0D]">
-      <NavBar />
+
       <HeroSection 
         title="Unleash Your Potential" 
         subtitle="Join the premier cricket academy dedicated to creating the legends of tomorrow."

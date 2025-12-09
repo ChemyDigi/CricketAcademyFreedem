@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Oswald, Poppins } from "next/font/google";
 import "./globals.css";
+import ClientLayout from "../components/shared/ClientLayout";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -40,7 +41,9 @@ export default function RootLayout({
       <body
         className={`${oswald.variable} ${poppins.variable} antialiased bg-background text-foreground`}
       >
-        {children}
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );

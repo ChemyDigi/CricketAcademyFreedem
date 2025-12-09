@@ -1,5 +1,5 @@
 
-import NavBar from "../../components/shared/NavBar";
+
 import HeroSection from "../../components/shared/HeroSection";
 import Footer from "../../components/shared/Footer";
 import BlogsGrid from "../../components/blogs/BlogsGrid";
@@ -7,7 +7,7 @@ import BlogsGrid from "../../components/blogs/BlogsGrid";
 export default function BlogsPage() {
   return (
     <main className="min-h-screen bg-[#0B0B0D]">
-      <NavBar />
+
       <HeroSection 
         title="Academy News" 
         subtitle="Latest updates, instructional articles, and cricketing insights."

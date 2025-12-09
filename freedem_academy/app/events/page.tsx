@@ -1,5 +1,5 @@
 
-import NavBar from "../../components/shared/NavBar";
+
 import HeroSection from "../../components/shared/HeroSection";
 import Footer from "../../components/shared/Footer";
 import EventsCalendarSection from "../../components/events/EventsCalendarSection";
@@ -9,7 +9,7 @@ import { PastScoresTable, WinnersHighlight } from "../../components/events/Event
 export default function EventsPage() {
   return (
     <main className="min-h-screen bg-[#0B0B0D]">
-      <NavBar />
+
       <HeroSection 
         title="Events & Tournaments"
         subtitle="Stay updated with our latest matches, camps, and academy events."

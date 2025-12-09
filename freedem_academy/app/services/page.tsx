@@ -1,5 +1,5 @@
 
-import NavBar from "../../components/shared/NavBar";
+
 import HeroSection from "../../components/shared/HeroSection";
 import Footer from "../../components/shared/Footer";
 import ServicesIntro from "../../components/services/ServicesIntro";
@@ -8,7 +8,7 @@ import ServicesGrid from "../../components/services/ServicesGrid";
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#0B0B0D]">
-      <NavBar />
+
       <HeroSection 
         title="Training Programs" 
         subtitle="Comprehensive coaching modules designed for every skill level."

@@ -1,5 +1,5 @@
 
-import NavBar from "../../components/shared/NavBar";
+
 import HeroSection from "../../components/shared/HeroSection";
 import Footer from "../../components/shared/Footer";
 import ContactForm from "../../components/contact/ContactForm";
@@ -10,7 +10,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#0B0B0D]">
-      <NavBar />
+
       <HeroSection 
         title="Contact Us" 
         subtitle="We'd love to hear from you. Reach out for enrollments or queries."

@@ -1,5 +1,5 @@
 
-import NavBar from "../../../components/shared/NavBar";
+
 import Footer from "../../../components/shared/Footer";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import Link from "next/link";
@@ -19,7 +19,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ id:
 
   return (
     <main className="min-h-screen bg-[#0B0B0D]">
-      <NavBar />
+
       
       {/* Article Header */}
       <div className="relative h-[60vh] w-full flex items-center justify-center">

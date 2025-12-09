@@ -1,5 +1,5 @@
 
-import NavBar from "../../components/shared/NavBar";
+
 import HeroSection from "../../components/shared/HeroSection";
 import Footer from "../../components/shared/Footer";
 import StatsSection from "../../components/about/StatsSection";
@@ -10,7 +10,7 @@ import InstagramFeed from "../../components/about/InstagramFeed";
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#0B0B0D]">
-      <NavBar />
+
       <HeroSection 
          title="Our Legacy" 
          subtitle="Building character and champions since 2010."

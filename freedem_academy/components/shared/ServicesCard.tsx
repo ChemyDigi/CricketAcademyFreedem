@@ -29,11 +29,6 @@ export default function ServicesCard({ title, description, icon: Icon }: Service
         <p className="text-gray-400 text-sm leading-relaxed mb-6">
           {description}
         </p>
-        
-        <div className="flex items-center text-primary text-xs font-bold uppercase tracking-widest group-hover:gap-2 transition-all duration-300 cursor-pointer">
-          <span>Learn More</span>
-          <ArrowRight className="w-4 h-4 ml-1" />
-        </div>
       </div>
     </motion.div>
   );
