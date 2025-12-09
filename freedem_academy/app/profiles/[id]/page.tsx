@@ -21,7 +21,7 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
   }
 
   return (
-    <main className="min-h-screen bg-[#0B0B0D]">
+    <main className="min-h-screen bg-gradient-to-br from-black via-[#0a0000] to-[#220000]">
       <NavBar />
       
       <div className="pt-32 pb-20 max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
