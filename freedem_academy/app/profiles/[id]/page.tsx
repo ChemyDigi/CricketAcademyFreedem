@@ -4,6 +4,7 @@ import Footer from "../../../components/shared/Footer";
 import { ArrowLeft, Trophy, Star } from "lucide-react";
 import Link from "next/link";
 import coachesData from "../../../data/coaches.json";
+import CoachTabs from "../../../components/shared/CoachTabs";
 
 // This would typically fetch data based on params.id
 // For SSG/SSR you'd use generateStaticParams or standard fetch
@@ -81,63 +82,16 @@ export default async function CoachDetailPage({ params }: { params: Promise<{ id
         </div>
 
         {/* Specialization - Full Width */}
-        {(coach.specialization || coach.specializationDescription) && (
-          <div className="w-full mb-12">
-            <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Specialization</h3>
-            {coach.specializationDescription && (
-              <p className="text-gray-400 mb-4">{coach.specializationDescription}</p>
-            )}
-            {coach.specialization && Array.isArray(coach.specialization) && (
-              <div className="flex flex-wrap gap-2">
-                {coach.specialization.map((spec, idx) => (
-                  <span key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
-                    {spec}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Experience - Full Width */}
-        {(coach.experience || coach.experienceDescription) && (
-          <div className="w-full mb-12">
-            <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Experience</h3>
-            {coach.experienceDescription && (
-              <p className="text-gray-400 mb-4">{coach.experienceDescription}</p>
-            )}
-            {coach.experience && Array.isArray(coach.experience) && (
-              <ul className="space-y-3">
-                {coach.experience.map((exp, idx) => (
-                  <li key={idx} className="flex items-start text-gray-300">
-                    <Star className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                    <span>{exp}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        )}
-
-        {/* Achievements - Full Width */}
-        {(coach.achievements || coach.achievementDescription) && (
-          <div className="w-full">
-            <h3 className="text-xl font-bold text-white uppercase mb-4 border-b border-white/10 pb-2">Achievements</h3>
-            {coach.achievementDescription && (
-              <p className="text-gray-400 mb-4">{coach.achievementDescription}</p>
-            )}
-            {coach.achievements && coach.achievements.length > 0 && (
-              <ul className="space-y-3">
-                {coach.achievements.map((item, idx) => (
-                  <li key={idx} className="flex items-start text-gray-400">
-                    <Trophy className="w-4 h-4 text-primary mr-3 flex-shrink-0 mt-1" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        )}
+        <div className="w-full mb-12">
+          <CoachTabs 
+            specialization={coach.specialization}
+            specializationDescription={coach.specializationDescription}
+            experience={coach.experience}
+            experienceDescription={coach.experienceDescription}
+            achievements={coach.achievements}
+            achievementDescription={coach.achievementDescription}
+          />
+        </div>
       </div>
       
       <Footer />
