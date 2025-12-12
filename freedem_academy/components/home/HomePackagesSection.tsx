@@ -10,9 +10,9 @@ export default function HomePackagesSection() {
   const previewPackages = packagesData["Dubai"];
 
   return (
-    <section className="py-24 bg-[#0B0B0D] relative overflow-hidden">
+    <section className="py-24 bg-primary relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
       
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -20,7 +20,7 @@ export default function HomePackagesSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-bold tracking-widest uppercase text-sm"
+            className="text-white/80 font-bold tracking-widest uppercase text-sm"
           >
             Training Plans
           </motion.span>
@@ -33,13 +33,6 @@ export default function HomePackagesSection() {
           >
             Our Packages
           </motion.h2>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="w-20 h-1 bg-primary mx-auto" 
-          />
         </div>
 
         {/* Packages Grid - Preview */}
@@ -53,7 +46,7 @@ export default function HomePackagesSection() {
               transition={{ delay: index * 0.1 }}
               className={`
                 group relative bg-[#121214] border transition-all duration-300
-                ${index === 2 ? 'border-primary/50 ring-1 ring-primary/20' : 'border-white/5'}
+                ${index === 2 ? 'border-primary/50 ring-1 ring-primary/20' : 'border-primary/5'}
               `}
             >
               {index === 2 && (
@@ -96,7 +89,7 @@ export default function HomePackagesSection() {
         <div className="text-center">
           <Link href="/services#packages">
             <motion.button
-              className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300 inline-flex items-center gap-2"
+              className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest inline-flex items-center gap-2 cursor-pointer"
             >
               View All Packages
               <ArrowRight className="w-5 h-5" />
