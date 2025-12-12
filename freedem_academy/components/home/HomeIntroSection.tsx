@@ -118,7 +118,7 @@ export default function HomeIntroSection() {
 
             <Link
               href="/about"
-              className="inline-flex items-center px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-red-700 transition-all duration-300 clip-path-slant"
+              className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300 inline-flex items-center gap-2"
             >
               Discover More <ArrowRight className="ml-2 w-5 h-5" />
             </Link>

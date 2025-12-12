@@ -19,7 +19,7 @@ export default function TrainingPackagesSection() {
   const [activeLocation, setActiveLocation] = useState<Location>("Dubai");
 
   return (
-    <section className="py-24 bg-[#0B0B0D] relative overflow-hidden">
+    <section id="packages" className="py-24 bg-[#0B0B0D] relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />

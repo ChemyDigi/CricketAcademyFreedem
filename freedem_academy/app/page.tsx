@@ -3,6 +3,7 @@
 import HeroSection from "../components/shared/HeroSection";
 import HomeIntroSection from "../components/home/HomeIntroSection";
 import HomeServicesSection from "../components/home/HomeServicesSection";
+import HomePackagesSection from "../components/home/HomePackagesSection";
 import HomeEventsSection from "../components/home/HomeEventsSection";
 import FacilitiesSection from "../components/home/FacilitiesSection";
 import Footer from "../components/shared/Footer";
@@ -19,6 +20,7 @@ export default function Home() {
       />
       <HomeIntroSection />
       <HomeServicesSection />
+      <HomePackagesSection />
       <HomeEventsSection />
       <FacilitiesSection />
       <Footer />

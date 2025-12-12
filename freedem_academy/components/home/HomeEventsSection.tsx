@@ -44,7 +44,7 @@ export default function HomeEventsSection() {
   }
 
   return (
-    <section className="py-24 bg-[#0B0B0D] relative">
+    <section className="py-10 bg-[#0B0B0D] relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
 
         {/* Heading Section */}
