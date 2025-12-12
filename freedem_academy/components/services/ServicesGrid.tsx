@@ -40,8 +40,8 @@ export default function ServicesGrid() {
     return (
       <section className="py-10 bg-[#0B0B0D] pb-24">
         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[1, 2, 3, 4].map((i) => (
               <div key={i} className="h-64 bg-gray-800 animate-pulse rounded-lg"></div>
             ))}
           </div>
@@ -53,7 +53,7 @@ export default function ServicesGrid() {
   return (
     <section className="py-10 bg-[#0B0B0D] pb-24">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (
             <ServicesCard
               key={service.id}

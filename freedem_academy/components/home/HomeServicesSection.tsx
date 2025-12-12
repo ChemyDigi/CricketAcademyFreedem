@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ServicesCard from "../shared/ServicesCard";
-import { User, Users, Video, Activity } from "lucide-react";
+import { User, Users, Video, Activity, Target, Shield, Zap, Award } from "lucide-react";
 import { getServices, Service } from "@/lib/firebaseService";
 
 // Map icon strings to components
@@ -10,7 +10,11 @@ const iconMap: { [key: string]: any } = {
   "User": User,
   "Users": Users,
   "Video": Video,
-  "Activity": Activity
+  "Activity": Activity,
+  "Target": Target,
+  "Shield": Shield,
+  "Zap": Zap,
+  "Award": Award
 };
 
 export default function HomeServicesSection() {
@@ -21,7 +25,7 @@ export default function HomeServicesSection() {
     const fetchServices = async () => {
       try {
         const data = await getServices();
-        setServices(data.slice(0, 4));
+        setServices(data);
       } catch (error) {
         console.error("Error fetching services:", error);
       } finally {

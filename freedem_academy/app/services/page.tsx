@@ -4,6 +4,7 @@ import HeroSection from "../../components/shared/HeroSection";
 import Footer from "../../components/shared/Footer";
 import ServicesIntro from "../../components/services/ServicesIntro";
 import ServicesGrid from "../../components/services/ServicesGrid";
+import TrainingPackagesSection from "../../components/services/TrainingPackagesSection";
 
 export default function ServicesPage() {
   return (
@@ -16,6 +17,7 @@ export default function ServicesPage() {
       />
       <ServicesIntro />
       <ServicesGrid />
+      <TrainingPackagesSection />
       <Footer />
     </main>
   );

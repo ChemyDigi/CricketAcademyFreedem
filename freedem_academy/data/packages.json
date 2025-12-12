@@ -1,0 +1,62 @@
+{
+    "Dubai": [
+        {
+            "name": "Package 1 – Starter Plan",
+            "trainingDays": "1 Day per Week",
+            "sessions": "4 Days per Month",
+            "fee": "AED 315 / Month"
+        },
+        {
+            "name": "Package 2 – Development Plan",
+            "trainingDays": "2 Days per Week",
+            "sessions": "8 Days per Month",
+            "fee": "AED 420 / Month"
+        },
+        {
+            "name": "Package 3 – Professional Plan",
+            "trainingDays": "Unlimited Classes",
+            "sessions": "Unlimited per Month",
+            "fee": "AED 525 / Month"
+        }
+    ],
+    "Ajman": [
+        {
+            "name": "Package 1 – Starter Plan",
+            "trainingDays": "2 Days per Week",
+            "sessions": "8 Days per Month",
+            "fee": "AED 315 / Month"
+        },
+        {
+            "name": "Package 2 – Advanced Development Plan",
+            "trainingDays": "3 Days per Week",
+            "sessions": "12 Days per Month",
+            "fee": "AED 420 / Month"
+        },
+        {
+            "name": "Package 3 – Unlimited Training Plan",
+            "trainingDays": "Unlimited Classes",
+            "sessions": "Unlimited per Month",
+            "fee": "AED 525 / Month"
+        }
+    ],
+    "Sharjah": [
+        {
+            "name": "Package 1 – Foundation Plan",
+            "trainingDays": "2 Days per Week",
+            "sessions": "8 Days per Month",
+            "fee": "AED 315 / Month"
+        },
+        {
+            "name": "Package 2 – Performance Plan",
+            "trainingDays": "3 Days per Week",
+            "sessions": "12 Days per Month",
+            "fee": "AED 420 / Month"
+        },
+        {
+            "name": "Package 3 – Elite Training Plan",
+            "trainingDays": "4 Days per Week",
+            "sessions": "16 Days per Month",
+            "fee": "AED 525 / Month"
+        }
+    ]
+}
