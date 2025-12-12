@@ -2,56 +2,56 @@
     {
         "id": "1",
         "title": "Batting Skills",
-        "icon": "Target",
+        "icon": "Crosshair",
         "description": "Improve batting technique, shot selection, and confidence through guided practice.",
         "price": ""
     },
     {
         "id": "2",
         "title": "Fast Bowling Basics",
-        "icon": "Zap",
+        "icon": "Wind",
         "description": "Learn the key elements of fast bowling, including run-up, action, and seam control.",
         "price": ""
     },
     {
         "id": "3",
         "title": "Spin Bowling Training",
-        "icon": "User",
+        "icon": "RotateCw",
         "description": "Understand spin fundamentals with focused drills on grip, release, and accuracy.",
         "price": ""
     },
     {
         "id": "4",
         "title": "Fitness & Fielding",
-        "icon": "Activity",
+        "icon": "Dumbbell",
         "description": "Build cricket fitness, improve fielding agility, and learn wicket-keeping essentials.",
         "price": ""
     },
     {
         "id": "5",
         "title": "Match Situations",
-        "icon": "Users",
+        "icon": "Swords",
         "description": "Practice real-game scenarios to develop decision-making and teamwork under pressure.",
         "price": ""
     },
     {
         "id": "6",
         "title": "Video Review Feedback",
-        "icon": "Video",
+        "icon": "MonitorPlay",
         "description": "Get personalized feedback through video review to improve your overall performance.",
         "price": ""
     },
     {
         "id": "7",
         "title": "Strategy & Technical Drills",
-        "icon": "Shield",
+        "icon": "Brain",
         "description": "Learn on-field tactics and complete drills to sharpen your technical cricket skills.",
         "price": ""
     },
     {
         "id": "8",
         "title": "Centre Wicket Practice",
-        "icon": "Award",
+        "icon": "MapPin",
         "description": "Train on the main centre wicket to experience real match-like conditions.",
         "price": ""
     }

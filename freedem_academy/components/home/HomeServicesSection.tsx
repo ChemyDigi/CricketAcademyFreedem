@@ -2,19 +2,29 @@
 
 import { useEffect, useState } from "react";
 import ServicesCard from "../shared/ServicesCard";
-import { User, Users, Video, Activity, Target, Shield, Zap, Award } from "lucide-react";
+import { Crosshair, Wind, RotateCw, Dumbbell, Swords, MonitorPlay, Brain, MapPin } from "lucide-react";
 import { getServices, Service } from "@/lib/firebaseService";
 
 // Map icon strings to components
 const iconMap: { [key: string]: any } = {
-  "User": User,
-  "Users": Users,
-  "Video": Video,
-  "Activity": Activity,
-  "Target": Target,
-  "Shield": Shield,
-  "Zap": Zap,
-  "Award": Award
+  // New icons
+  "Crosshair": Crosshair,
+  "Wind": Wind,
+  "RotateCw": RotateCw,
+  "Dumbbell": Dumbbell,
+  "Swords": Swords,
+  "MonitorPlay": MonitorPlay,
+  "Brain": Brain,
+  "MapPin": MapPin,
+  // Legacy icons (mapping to new visuals)
+  "Target": Crosshair,
+  "Zap": Wind,
+  "User": RotateCw,
+  "Activity": Dumbbell,
+  "Users": Swords,
+  "Video": MonitorPlay,
+  "Shield": Brain,
+  "Award": MapPin
 };
 
 export default function HomeServicesSection() {
