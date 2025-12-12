@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Events collection - Full access
+    match /events/{eventId} {
+      allow read, write: if true;
+    }
+    
+    // Blogs collection - Full access
+    match /blogs/{blogId} {
+      allow read, write: if true;
+    }
+    
+    // Coaches collection - Full access
+    match /coaches/{coachId} {
+      allow read, write: if true;
+    }
+    
+    // Services collection - Full access
+    match /services/{serviceId} {
+      allow read, write: if true;
+    }
+  }
+}

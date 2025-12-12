@@ -1,10 +1,39 @@
 'use client';
 
+import { useEffect, useState } from "react";
 import EventCard from "../shared/EventCard";
-import eventsData from "../../data/events.json";
 import { motion } from "framer-motion";
+import { getEvents, Event } from "@/lib/firebaseService";
 
 export default function UpcomingEvents() {
+  const [events, setEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const data = await getEvents();
+        setEvents(data);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[1, 2, 3].map((i) => (
+          <div key={i} className="h-64 bg-gray-800 animate-pulse rounded-lg"></div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <motion.div
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -18,7 +47,7 @@ export default function UpcomingEvents() {
         },
       }}
     >
-      {eventsData.map((event) => (
+      {events.map((event) => (
         <motion.div
           key={event.id}
           variants={{

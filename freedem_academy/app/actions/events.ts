@@ -1,10 +1,7 @@
 "use server";
 
-import fs from "fs/promises";
-import path from "path";
 import { revalidatePath } from "next/cache";
-
-const EVENTS_FILE_PATH = path.join(process.cwd(), "data", "events.json");
+import * as firebaseService from "@/lib/firebaseService";
 
 export async function verifyPassword(password: string) {
     const adminPassword = process.env.ADMIN_PASSWORD;
@@ -38,7 +35,7 @@ export async function addEvent(formData: FormData) {
         const category = formData.get("category") as string;
         const status = formData.get("status") as string;
 
-        const newEvent = {
+        const newEvent: firebaseService.Event = {
             id: Date.now().toString(),
             title,
             date,
@@ -49,19 +46,17 @@ export async function addEvent(formData: FormData) {
             status
         };
 
-        // Read existing events
-        const fileContent = await fs.readFile(EVENTS_FILE_PATH, "utf-8");
-        const events = JSON.parse(fileContent);
+        // Add event to Firebase
+        const result = await firebaseService.addEvent(newEvent);
 
-        // Add new event
-        events.push(newEvent);
-
-        // Write back to file
-        await fs.writeFile(EVENTS_FILE_PATH, JSON.stringify(events, null, 4));
+        if (!result.success) {
+            return { success: false, error: result.error || "Failed to add event" };
+        }
 
         // Revalidate paths
         revalidatePath("/");
         revalidatePath("/events");
+        revalidatePath("/admin-panel");
 
         return { success: true, message: "Event added successfully" };
     } catch (error) {
@@ -72,8 +67,8 @@ export async function addEvent(formData: FormData) {
 
 export async function getEvents() {
     try {
-        const fileContent = await fs.readFile(EVENTS_FILE_PATH, "utf-8");
-        return JSON.parse(fileContent);
+        const events = await firebaseService.getEvents();
+        return events;
     } catch (error) {
         console.error("Error fetching events:", error);
         return [];
@@ -82,15 +77,15 @@ export async function getEvents() {
 
 export async function deleteEvent(id: string) {
     try {
-        const fileContent = await fs.readFile(EVENTS_FILE_PATH, "utf-8");
-        let events = JSON.parse(fileContent);
+        const result = await firebaseService.deleteEvent(id);
 
-        events = events.filter((e: any) => e.id !== id);
-
-        await fs.writeFile(EVENTS_FILE_PATH, JSON.stringify(events, null, 4));
+        if (!result.success) {
+            return { success: false, error: result.error || "Failed to delete event" };
+        }
 
         revalidatePath("/");
         revalidatePath("/events");
+        revalidatePath("/admin-panel");
 
         return { success: true };
     } catch (error) {
