@@ -31,7 +31,7 @@ export default function InstagramFeed() {
           </div>
           
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/freedemuae"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition-all duration-300"
