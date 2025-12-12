@@ -38,5 +38,15 @@
         "description": "Hello event",
         "category": "ceremony",
         "status": "upcoming"
+    },
+    {
+        "id": "1765520516897",
+        "title": "Sports Meet",
+        "date": "2025-12-20",
+        "time": "10.30 - 12.30",
+        "location": "Dubai",
+        "description": "Bla bla bla",
+        "category": "training",
+        "status": "upcoming"
     }
 ]
