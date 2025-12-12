@@ -1,13 +1,29 @@
 "use client";
-"use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import eventsData from "@/data/events.json";
+import { getEvents, Event } from "@/lib/firebaseService";
 
 export default function EventsCalendarSection() {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [events, setEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const data = await getEvents();
+        setEvents(data);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, []);
 
   // Helper to get days in month
   const getDaysInMonth = (date: Date) => {
@@ -46,7 +62,7 @@ export default function EventsCalendarSection() {
     const checkDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
     // Format to YYYY-MM-DD to match json
     const dateStr = checkDate.toLocaleDateString('en-CA'); // en-CA gives YYYY-MM-DD
-    return eventsData.filter(e => e.date === dateStr);
+    return events.filter(e => e.date === dateStr);
   };
 
   const isToday = (day: number) => {
@@ -55,6 +71,20 @@ export default function EventsCalendarSection() {
            currentDate.getMonth() === today.getMonth() && 
            currentDate.getFullYear() === today.getFullYear();
   };
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-[#08080A]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="bg-[#121214] p-8 border border-white/5 rounded-lg">
+            <div className="h-96 flex items-center justify-center">
+              <div className="text-gray-400">Loading calendar...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 bg-[#08080A]">
