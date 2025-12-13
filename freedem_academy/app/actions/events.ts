@@ -75,6 +75,7 @@ export async function getEvents() {
     }
 }
 
+
 export async function deleteEvent(id: string) {
     try {
         const result = await firebaseService.deleteEvent(id);
@@ -91,5 +92,49 @@ export async function deleteEvent(id: string) {
     } catch (error) {
         console.error("Error deleting event:", error);
         return { success: false, error: "Failed to delete event" };
+    }
+}
+
+export async function updateEvent(id: string, formData: FormData) {
+    try {
+        const password = formData.get("password") as string;
+        const auth = await verifyPassword(password);
+
+        if (!auth.success) {
+            return { success: false, error: auth.error };
+        }
+
+        const title = formData.get("title") as string;
+        const date = formData.get("date") as string;
+        const time = formData.get("time") as string;
+        const location = formData.get("location") as string;
+        const description = formData.get("description") as string;
+        const category = formData.get("category") as string;
+        const status = formData.get("status") as string;
+
+        const updatedEvent: Partial<firebaseService.Event> = {
+            title,
+            date,
+            time,
+            location,
+            description,
+            category,
+            status
+        };
+
+        const result = await firebaseService.updateEvent(id, updatedEvent);
+
+        if (!result.success) {
+            return { success: false, error: result.error || "Failed to update event" };
+        }
+
+        revalidatePath("/");
+        revalidatePath("/events");
+        revalidatePath("/admin-panel");
+
+        return { success: true, message: "Event updated successfully" };
+    } catch (error) {
+        console.error("Error updating event:", error);
+        return { success: false, error: "Failed to update event" };
     }
 }

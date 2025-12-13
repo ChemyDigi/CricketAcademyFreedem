@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { addEvent, verifyPassword, getEvents, deleteEvent } from "@/app/actions/events";
+import { addEvent, verifyPassword, getEvents, deleteEvent, updateEvent } from "@/app/actions/events";
 import { useRouter } from "next/navigation";
 import DatePicker from "@/components/ui/DatePicker";
 import { 
@@ -15,7 +15,9 @@ import {
     Clock, 
     Calendar,
     Type,
-    AlignLeft
+
+    AlignLeft,
+    Edit2
 } from "lucide-react";
 
 export default function AdminPanel() {
@@ -28,6 +30,7 @@ export default function AdminPanel() {
   const [activeTab, setActiveTab] = useState("events");
   const [events, setEvents] = useState<any[]>([]);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [editingEvent, setEditingEvent] = useState<any>(null); // Track event being edited
   const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   // Form states
@@ -65,7 +68,7 @@ export default function AdminPanel() {
     }
   };
 
-  const handleAddEvent = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleAddOrUpdateEvent = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     
@@ -73,9 +76,16 @@ export default function AdminPanel() {
     formData.append("password", password);
 
     try {
-        const result = await addEvent(formData);
+        let result;
+        if (editingEvent) {
+             result = await updateEvent(editingEvent.id, formData);
+        } else {
+             result = await addEvent(formData);
+        }
+
         if (result.success) {
             setShowAddModal(false);
+            setEditingEvent(null); // Clear editing state
             setRefreshTrigger(prev => prev + 1);
             setSelectedDate(""); // Reset date
             router.refresh();
@@ -83,11 +93,24 @@ export default function AdminPanel() {
             alert("Error: " + result.error);
         }
     } catch (error) {
-        alert("An error occurred while adding the event");
+        alert("An error occurred while saving the event");
     } finally {
         setLoading(false);
     }
   };
+
+  const openAddModal = () => {
+      setEditingEvent(null);
+      setSelectedDate("");
+      setShowAddModal(true);
+  };
+
+  const openEditModal = (event: any) => {
+      setEditingEvent(event);
+      setSelectedDate(event.date); // Pre-fill date
+      setShowAddModal(true);
+  };
+
 
   const handleDeleteEvent = async (id: string) => {
     if (!confirm("Are you sure you want to delete this event?")) return;
@@ -237,7 +260,7 @@ export default function AdminPanel() {
                                 <p className="text-sm text-gray-400">Manage your academy schedule</p>
                             </div>
                             <button 
-                                onClick={() => setShowAddModal(true)}
+                                onClick={openAddModal}
                                 className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-lg shadow-primary/20"
                             >
                                 <Plus size={16} />
@@ -284,6 +307,13 @@ export default function AdminPanel() {
                                     >
                                         <Trash2 size={18} />
                                     </button>
+                                     <button 
+                                        onClick={() => openEditModal(event)}
+                                        className="p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-500/10 rounded-lg transition-colors ml-2"
+                                        title="Edit Event"
+                                    >
+                                        <Edit2 size={18} />
+                                    </button>
                                 </div>
                             ))}
                             {events.length === 0 && (
@@ -302,7 +332,7 @@ export default function AdminPanel() {
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
                 <div className="bg-[#121214] border border-white/10 rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
                     <div className="p-6 border-b border-white/10 flex justify-between items-center sticky top-0 bg-[#121214]">
-                        <h3 className="text-lg font-bold text-white">Add New Event</h3>
+                        <h3 className="text-lg font-bold text-white">{editingEvent ? "Edit Event" : "Add New Event"}</h3>
                         <button 
                             onClick={() => setShowAddModal(false)}
                             className="text-gray-400 hover:text-white transition-colors"
@@ -312,7 +342,7 @@ export default function AdminPanel() {
                     </div>
                     
                     <div className="p-6">
-                        <form onSubmit={handleAddEvent} className="space-y-6">
+                        <form onSubmit={handleAddOrUpdateEvent} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-gray-400 text-sm font-medium flex items-center gap-2">
@@ -321,6 +351,7 @@ export default function AdminPanel() {
                                     <input
                                         name="title"
                                         required
+                                        defaultValue={editingEvent?.title}
                                         className="w-full bg-black/20 border border-white/10 rounded px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors"
                                         placeholder="e.g. Annual Sports Day"
                                     />
@@ -346,6 +377,7 @@ export default function AdminPanel() {
                                     <input
                                         name="time"
                                         required
+                                        defaultValue={editingEvent?.time}
                                         className="w-full bg-black/20 border border-white/10 rounded px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors"
                                         placeholder="e.g. 09:00 AM - 05:00 PM"
                                     />
@@ -357,6 +389,7 @@ export default function AdminPanel() {
                                     <input
                                         name="location"
                                         required
+                                        defaultValue={editingEvent?.location}
                                         className="w-full bg-black/20 border border-white/10 rounded px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors"
                                         placeholder="Main Ground"
                                     />
@@ -369,6 +402,7 @@ export default function AdminPanel() {
                                     <select
                                         name="category"
                                         required
+                                        defaultValue={editingEvent?.category}
                                         className="w-full bg-black/20 border border-white/10 rounded px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors"
                                     >
                                         <option value="selection">Selection</option>
@@ -384,6 +418,7 @@ export default function AdminPanel() {
                                     <select
                                         name="status"
                                         required
+                                        defaultValue={editingEvent?.status}
                                         className="w-full bg-black/20 border border-white/10 rounded px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors"
                                     >
                                         <option value="upcoming">Upcoming</option>
@@ -401,6 +436,7 @@ export default function AdminPanel() {
                                     name="description"
                                     rows={4}
                                     required
+                                    defaultValue={editingEvent?.description}
                                     className="w-full bg-black/20 border border-white/10 rounded px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors"
                                     placeholder="Event details..."
                                 ></textarea>
@@ -411,7 +447,7 @@ export default function AdminPanel() {
                                 disabled={loading}
                                 className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded transition-colors disabled:opacity-50"
                             >
-                                {loading ? "Adding..." : "Add Event"}
+                                {loading ? (editingEvent ? "Updating..." : "Adding...") : (editingEvent ? "Update Event" : "Add Event")}
                             </button>
                         </form>
                     </div>
