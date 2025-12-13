@@ -89,7 +89,7 @@ export default function HomePackagesSection() {
         <div className="text-center">
           <Link href="/services#packages">
             <motion.button
-              className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest inline-flex items-center gap-2 cursor-pointer"
+              className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest inline-flex items-center gap-2 cursor-pointer hover:bg-gray-50 hover:text-primary transition-colors"
             >
               View All Packages
               <ArrowRight className="w-5 h-5" />

@@ -4,6 +4,7 @@ import HeroSection from "../../components/shared/HeroSection";
 import Footer from "../../components/shared/Footer";
 import EventsCalendarSection from "../../components/events/EventsCalendarSection";
 import UpcomingEvents from "../../components/events/UpcomingEvents";
+import SignatureEvents from "../../components/events/SignatureEvents";
 import { PastScoresTable, WinnersHighlight } from "../../components/events/EventsWidgets";
 
 export default function EventsPage() {
@@ -28,6 +29,8 @@ export default function EventsPage() {
            <UpcomingEvents />
         </div>
       </section>
+
+      <SignatureEvents />
 
       <section className="py-20 bg-[#08080A]">
          <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
