@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import ServicesCard from "../shared/ServicesCard";
 import { Crosshair, Wind, RotateCw, Dumbbell, Swords, MonitorPlay, Brain, MapPin } from "lucide-react";
-import { getServices, Service } from "@/lib/firebaseService";
+// import { getServices, Service } from "@/lib/firebaseService";
+import servicesData from "@/data/services.json";
 
 // Map icon strings to components
 const iconMap: { [key: string]: any } = {
@@ -28,22 +29,12 @@ const iconMap: { [key: string]: any } = {
 };
 
 export default function HomeServicesSection() {
-  const [services, setServices] = useState<Service[]>([]);
+  const [services, setServices] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const data = await getServices();
-        setServices(data);
-      } catch (error) {
-        console.error("Error fetching services:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchServices();
+    setServices(servicesData);
+    setLoading(false);
   }, []);
 
   if (loading) {
