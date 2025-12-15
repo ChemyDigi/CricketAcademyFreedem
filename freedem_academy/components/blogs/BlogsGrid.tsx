@@ -2,25 +2,16 @@
 
 import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
-import { getBlogs, Blog } from "@/lib/firebaseService";
+// import { getBlogs, Blog } from "@/lib/firebaseService";
+import blogsData from "@/data/blogs.json";
 
 export default function BlogsGrid() {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [blogs, setBlogs] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const data = await getBlogs();
-        setBlogs(data);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
+    setBlogs(blogsData);
+    setLoading(false);
   }, []);
 
   if (loading) {

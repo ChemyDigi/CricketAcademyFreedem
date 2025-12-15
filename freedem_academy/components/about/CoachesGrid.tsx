@@ -3,25 +3,17 @@
 import { useEffect, useState } from "react";
 import CoachCard from "./CoachCard";
 import { motion } from "framer-motion";
-import { getCoaches, Coach } from "@/lib/firebaseService";
+// import { getCoaches, Coach } from "@/lib/firebaseService";
+import coachesData from "@/data/coaches.json";
 
 export default function CoachesGrid() {
-  const [coaches, setCoaches] = useState<Coach[]>([]);
+  const [coaches, setCoaches] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchCoaches = async () => {
-      try {
-        const data = await getCoaches();
-        setCoaches(data);
-      } catch (error) {
-        console.error("Error fetching coaches:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCoaches();
+    // Simulate loading or just set data directly
+    setCoaches(coachesData);
+    setLoading(false);
   }, []);
 
   if (loading) {

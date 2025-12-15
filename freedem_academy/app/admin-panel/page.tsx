@@ -17,7 +17,9 @@ import {
     Type,
 
     AlignLeft,
-    Edit2
+    Edit2,
+    Menu,
+    X
 } from "lucide-react";
 
 export default function AdminPanel() {
@@ -32,6 +34,7 @@ export default function AdminPanel() {
   const [showAddModal, setShowAddModal] = useState(false);
   const [editingEvent, setEditingEvent] = useState<any>(null); // Track event being edited
   const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Mobile sidebar state
 
   // Form states
   const [selectedDate, setSelectedDate] = useState("");
@@ -204,17 +207,39 @@ export default function AdminPanel() {
 
   // Dashboard UI
   return (
-    <div className="min-h-screen bg-[#08080A] flex">
+    <div className="min-h-screen bg-[#08080A] flex flex-col md:flex-row relative">
+        {/* Mobile Sidebar Overlay */}
+        {isSidebarOpen && (
+            <div 
+                className="fixed inset-0 bg-black/80 z-20 md:hidden"
+                onClick={() => setIsSidebarOpen(false)}
+            />
+        )}
+
         {/* Sidebar */}
-        <div className="w-64 bg-[#121214] border-r border-white/5 flex-shrink-0 flex flex-col fixed md:relative h-full z-20">
-            <div className="p-6 flex items-center gap-3 border-b border-white/5">
-                <img src="/FreedemLogo.png" alt="Logo" className="w-8 h-8 object-contain" />
-                <span className="font-bold text-white tracking-wide">ADMIN PANEL</span>
+        <div className={`
+            fixed inset-y-0 left-0 w-64 bg-[#121214] border-r border-white/5 flex flex-col z-30 transition-transform duration-300 ease-in-out md:static md:translate-x-0
+            ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+        `}>
+            <div className="p-6 flex items-center justify-between border-b border-white/5">
+                <div className="flex items-center gap-3">
+                    <img src="/FreedemLogo.png" alt="Logo" className="w-8 h-8 object-contain" />
+                    <span className="font-bold text-white tracking-wide">ADMIN</span>
+                </div>
+                <button 
+                    onClick={() => setIsSidebarOpen(false)}
+                    className="md:hidden text-gray-400 hover:text-white"
+                >
+                    <X size={24} />
+                </button>
             </div>
             
             <nav className="flex-1 p-4 space-y-2">
                 <button 
-                    onClick={() => setActiveTab("events")}
+                    onClick={() => {
+                        setActiveTab("events");
+                        setIsSidebarOpen(false);
+                    }}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                         activeTab === "events" 
                         ? "bg-primary/10 text-primary" 
@@ -241,17 +266,25 @@ export default function AdminPanel() {
         {/* Main Content */}
         <div className="flex-1 flex flex-col h-screen overflow-hidden">
             {/* Header */}
-            <header className="h-16 bg-[#121214]/50 backdrop-blur border-b border-white/5 flex items-center justify-between px-8">
-                <h2 className="text-xl font-bold text-white">
-                    {activeTab === "events" ? "Event Management" : "Dashboard"}
-                </h2>
-                <div className="text-sm text-gray-400">
-                    Welcome, <span className="text-white font-medium">Admin</span>
+            <header className="h-16 bg-[#121214]/50 backdrop-blur border-b border-white/5 flex items-center px-4 md:px-8 gap-4">
+                <button 
+                    onClick={() => setIsSidebarOpen(true)}
+                    className="md:hidden text-gray-400 hover:text-white p-1"
+                >
+                    <Menu size={24} />
+                </button>
+                <div className="flex-1 flex justify-between items-center">
+                    <h2 className="text-xl font-bold text-white truncate">
+                        {activeTab === "events" ? "Event Management" : "Dashboard"}
+                    </h2>
+                    <div className="text-sm text-gray-400 hidden sm:block">
+                        Welcome, <span className="text-white font-medium">Admin</span>
+                    </div>
                 </div>
             </header>
 
             {/* Content Area */}
-            <main className="flex-1 overflow-y-auto p-8">
+            <main className="flex-1 overflow-y-auto p-4 md:p-8">
                 {activeTab === "events" && (
                     <div className="space-y-6">
                         <div className="flex justify-between items-center">
@@ -271,10 +304,10 @@ export default function AdminPanel() {
                         {/* Event List */}
                         <div className="grid grid-cols-1 gap-4">
                             {events.map((event: any) => (
-                                <div key={event.id} className="bg-[#121214] border border-white/5 rounded-lg p-5 flex items-center justify-between group hover:border-white/10 transition-colors">
+                                <div key={event.id} className="bg-[#121214] border border-white/5 rounded-lg p-5 flex flex-col md:flex-row md:items-center justify-between group hover:border-white/10 transition-colors gap-4">
                                     <div className="flex-1 min-w-0">
-                                        <div className="flex items-center gap-3 mb-1">
-                                            <h4 className="text-white font-medium truncate">{event.title}</h4>
+                                        <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                                            <h4 className="text-white font-medium truncate max-w-full">{event.title}</h4>
                                             <span className={`px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ${
                                                 event.status === 'upcoming' ? 'bg-green-500/10 text-green-500' : 
                                                 event.status === 'past' ? 'bg-gray-500/10 text-gray-500' : 'bg-red-500/10 text-red-500'
@@ -285,7 +318,7 @@ export default function AdminPanel() {
                                                 {event.category}
                                             </span>
                                         </div>
-                                        <div className="flex items-center gap-4 text-xs text-gray-400">
+                                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs text-gray-400">
                                             <div className="flex items-center gap-1.5">
                                                 <Calendar size={12} />
                                                 {event.date}
@@ -300,20 +333,22 @@ export default function AdminPanel() {
                                             </div>
                                         </div>
                                     </div>
-                                    <button 
-                                        onClick={() => handleDeleteEvent(event.id)}
-                                        className="p-2 text-gray-500 hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-colors"
-                                        title="Delete Event"
-                                    >
-                                        <Trash2 size={18} />
-                                    </button>
-                                     <button 
-                                        onClick={() => openEditModal(event)}
-                                        className="p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-500/10 rounded-lg transition-colors ml-2"
-                                        title="Edit Event"
-                                    >
-                                        <Edit2 size={18} />
-                                    </button>
+                                    <div className="flex items-center gap-2 self-end md:self-center">
+                                         <button 
+                                            onClick={() => openEditModal(event)}
+                                            className="p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-500/10 rounded-lg transition-colors"
+                                            title="Edit Event"
+                                        >
+                                            <Edit2 size={18} />
+                                        </button>
+                                        <button 
+                                            onClick={() => handleDeleteEvent(event.id)}
+                                            className="p-2 text-gray-500 hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-colors"
+                                            title="Delete Event"
+                                        >
+                                            <Trash2 size={18} />
+                                        </button>
+                                    </div>
                                 </div>
                             ))}
                             {events.length === 0 && (

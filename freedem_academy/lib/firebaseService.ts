@@ -1,21 +1,16 @@
-import { 
-  collection, 
-  getDocs, 
-  addDoc, 
-  updateDoc, 
-  deleteDoc, 
-  doc, 
-  query, 
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+  query,
   orderBy,
   Timestamp,
-  setDoc 
+  setDoc
 } from "firebase/firestore";
 import { db } from "./firebase";
-
-// Import JSON data as fallback
-import coachesData from "@/data/coaches.json";
-import servicesData from "@/data/services.json";
-import blogsData from "@/data/blogs.json";
 
 // Event type
 export interface Event {
@@ -28,44 +23,6 @@ export interface Event {
   category: string;
   status: string;
   createdAt?: string;
-}
-
-// Blog type
-export interface Blog {
-  id: string;
-  title: string;
-  author: string;
-  date: string;
-  excerpt: string;
-  content: string;
-  image: string;
-}
-
-// Coach type
-export interface Coach {
-  id: string;
-  name: string;
-  role: string;
-  image: string;
-  readmoreimage: string;
-  bio: string;
-  qualificationDescription: string;
-  qualifications: string[];
-  experienceDescription: string;
-  experience: string[];
-  achievementDescription: string;
-  achievements: string[];
-  specializationDescription: string;
-  specialization: string[];
-}
-
-// Service type
-export interface Service {
-  id: string;
-  title: string;
-  icon: string;
-  description: string;
-  price: string;
 }
 
 // Generic CRUD operations
@@ -85,7 +42,7 @@ export async function getCollectionData<T>(collectionName: string): Promise<T[]>
 
 // Add a document to a collection
 export async function addDocument<T extends { id: string }>(
-  collectionName: string, 
+  collectionName: string,
   data: T
 ): Promise<{ success: boolean; error?: string; id?: string }> {
   try {
@@ -104,8 +61,8 @@ export async function addDocument<T extends { id: string }>(
 
 // Update a document in a collection
 export async function updateDocument<T>(
-  collectionName: string, 
-  documentId: string, 
+  collectionName: string,
+  documentId: string,
   data: Partial<T>
 ): Promise<{ success: boolean; error?: string }> {
   try {
@@ -120,7 +77,7 @@ export async function updateDocument<T>(
 
 // Delete a document from a collection
 export async function deleteDocument(
-  collectionName: string, 
+  collectionName: string,
   documentId: string
 ): Promise<{ success: boolean; error?: string }> {
   try {
@@ -133,68 +90,9 @@ export async function deleteDocument(
   }
 }
 
-// Specific collection helpers
-
 // Events
 export const getEvents = () => getCollectionData<Event>("events");
 export const addEvent = (event: Event) => addDocument<Event>("events", event);
-export const updateEvent = (id: string, event: Partial<Event>) => 
+export const updateEvent = (id: string, event: Partial<Event>) =>
   updateDocument<Event>("events", id, event);
 export const deleteEvent = (id: string) => deleteDocument("events", id);
-
-// Blogs
-export const getBlogs = async (): Promise<Blog[]> => {
-  try {
-    const data = await getCollectionData<Blog>("blogs");
-    // If Firebase returns empty data, use JSON fallback
-    if (data.length === 0) {
-      return blogsData as Blog[];
-    }
-    return data;
-  } catch (error) {
-    console.error("Error fetching blogs, using JSON fallback:", error);
-    return blogsData as Blog[];
-  }
-};
-export const addBlog = (blog: Blog) => addDocument<Blog>("blogs", blog);
-export const updateBlog = (id: string, blog: Partial<Blog>) => 
-  updateDocument<Blog>("blogs", id, blog);
-export const deleteBlog = (id: string) => deleteDocument("blogs", id);
-
-// Coaches
-export const getCoaches = async (): Promise<Coach[]> => {
-  try {
-    const data = await getCollectionData<Coach>("coaches");
-    // If Firebase returns empty data, use JSON fallback
-    if (data.length === 0) {
-      return coachesData as Coach[];
-    }
-    return data;
-  } catch (error) {
-    console.error("Error fetching coaches, using JSON fallback:", error);
-    return coachesData as Coach[];
-  }
-};
-export const addCoach = (coach: Coach) => addDocument<Coach>("coaches", coach);
-export const updateCoach = (id: string, coach: Partial<Coach>) => 
-  updateDocument<Coach>("coaches", id, coach);
-export const deleteCoach = (id: string) => deleteDocument("coaches", id);
-
-// Services
-export const getServices = async (): Promise<Service[]> => {
-  try {
-    const data = await getCollectionData<Service>("services");
-    // If Firebase returns empty data, use JSON fallback
-    if (data.length === 0) {
-      return servicesData as Service[];
-    }
-    return data;
-  } catch (error) {
-    console.error("Error fetching services, using JSON fallback:", error);
-    return servicesData as Service[];
-  }
-};
-export const addService = (service: Service) => addDocument<Service>("services", service);
-export const updateService = (id: string, service: Partial<Service>) => 
-  updateDocument<Service>("services", id, service);
-export const deleteService = (id: string) => deleteDocument("services", id);
