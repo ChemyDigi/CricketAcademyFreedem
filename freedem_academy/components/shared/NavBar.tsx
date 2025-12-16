@@ -43,9 +43,7 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (pathname.startsWith("/admin-panel")) {
-    return null;
-  }
+
 
   return (
     <nav
