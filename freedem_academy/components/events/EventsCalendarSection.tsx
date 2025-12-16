@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { getEvents, Event } from "@/lib/firebaseService";
+import { getEvents, Event } from "@/app/actions/events";
 
 export default function EventsCalendarSection() {
   const [currentDate, setCurrentDate] = useState(new Date());

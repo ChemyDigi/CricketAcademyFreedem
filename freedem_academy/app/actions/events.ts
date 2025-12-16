@@ -1,12 +1,50 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import * as firebaseService from "@/lib/firebaseService";
+import fs from "fs/promises";
+import path from "path";
+
+const EVENTS_FILE_PATH = path.join(process.cwd(), "data", "events.json");
+
+export interface Event {
+    id: string;
+    title: string;
+    date: string;
+    time: string;
+    location: string;
+    description: string;
+    category: string;
+    status: string;
+    createdAt?: string;
+}
+
+async function readEventsFromFile(): Promise<Event[]> {
+    try {
+        const data = await fs.readFile(EVENTS_FILE_PATH, "utf-8");
+        return JSON.parse(data);
+    } catch (error) {
+        console.error("Error reading events from file:", error);
+        // If file doesn't exist or is invalid, return empty array
+        return [];
+    }
+}
+
+async function writeEventsToFile(events: Event[]): Promise<void> {
+    try {
+        await fs.writeFile(EVENTS_FILE_PATH, JSON.stringify(events, null, 2), "utf-8");
+    } catch (error) {
+        console.error("Error writing events to file:", error);
+        throw new Error("Failed to save events.");
+    }
+}
 
 export async function verifyPassword(password: string) {
     const adminPassword = process.env.ADMIN_PASSWORD;
 
     if (!adminPassword) {
+        // Fallback for development if env is not set, or error out. 
+        // For security, better to error if not set, but for "run locally" valid demo, maybe a default?
+        // Sticking to env var check as per original code.
         console.error("ADMIN_PASSWORD is not set in environment variables");
         return { success: false, error: "Server configuration error" };
     }
@@ -35,7 +73,7 @@ export async function addEvent(formData: FormData) {
         const category = formData.get("category") as string;
         const status = formData.get("status") as string;
 
-        const newEvent: firebaseService.Event = {
+        const newEvent: Event = {
             id: Date.now().toString(),
             title,
             date,
@@ -43,15 +81,13 @@ export async function addEvent(formData: FormData) {
             location,
             description,
             category,
-            status
+            status,
+            createdAt: new Date().toISOString()
         };
 
-        // Add event to Firebase
-        const result = await firebaseService.addEvent(newEvent);
-
-        if (!result.success) {
-            return { success: false, error: result.error || "Failed to add event" };
-        }
+        const events = await readEventsFromFile();
+        events.push(newEvent);
+        await writeEventsToFile(events);
 
         // Revalidate paths
         revalidatePath("/");
@@ -66,23 +102,19 @@ export async function addEvent(formData: FormData) {
 }
 
 export async function getEvents() {
-    try {
-        const events = await firebaseService.getEvents();
-        return events;
-    } catch (error) {
-        console.error("Error fetching events:", error);
-        return [];
-    }
+    return await readEventsFromFile();
 }
-
 
 export async function deleteEvent(id: string) {
     try {
-        const result = await firebaseService.deleteEvent(id);
+        const events = await readEventsFromFile();
+        const filteredEvents = events.filter(event => event.id !== id);
 
-        if (!result.success) {
-            return { success: false, error: result.error || "Failed to delete event" };
+        if (events.length === filteredEvents.length) {
+            return { success: false, error: "Event not found" };
         }
+
+        await writeEventsToFile(filteredEvents);
 
         revalidatePath("/");
         revalidatePath("/events");
@@ -112,21 +144,26 @@ export async function updateEvent(id: string, formData: FormData) {
         const category = formData.get("category") as string;
         const status = formData.get("status") as string;
 
-        const updatedEvent: Partial<firebaseService.Event> = {
+        const events = await readEventsFromFile();
+        const eventIndex = events.findIndex(e => e.id === id);
+
+        if (eventIndex === -1) {
+            return { success: false, error: "Event not found" };
+        }
+
+        const updatedEvent: Event = {
+            ...events[eventIndex],
             title,
             date,
             time,
             location,
             description,
             category,
-            status
+            status,
         };
 
-        const result = await firebaseService.updateEvent(id, updatedEvent);
-
-        if (!result.success) {
-            return { success: false, error: result.error || "Failed to update event" };
-        }
+        events[eventIndex] = updatedEvent;
+        await writeEventsToFile(events);
 
         revalidatePath("/");
         revalidatePath("/events");

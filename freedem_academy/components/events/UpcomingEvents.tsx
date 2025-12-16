@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import EventCard from "../shared/EventCard";
 import { motion } from "framer-motion";
-import { getEvents, Event } from "@/lib/firebaseService";
+import { getEvents, Event } from "@/app/actions/events";
 
 export default function UpcomingEvents() {
   const [events, setEvents] = useState<Event[]>([]);

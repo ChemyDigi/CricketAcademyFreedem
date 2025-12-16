@@ -5,7 +5,7 @@ import EventCard from "../shared/EventCard";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { getEvents, Event } from "@/lib/firebaseService";
+import { getEvents, Event } from "@/app/actions/events";
 
 export default function HomeEventsSection() {
   const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
