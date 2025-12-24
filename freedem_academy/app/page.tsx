@@ -13,7 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#0B0B0D]">
 
       <HeroSection 
-        title="Unleash Your Potential" 
+        title="You are invited to change your game" 
         subtitle="Join the premier cricket academy dedicated to creating the legends of tomorrow."
         isHome={true}
         backgroundImage="/home/hero.png" 
