@@ -1,29 +1,33 @@
-"use client";
+// 'use client';
+'use client';
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { getEvents, Event } from "@/app/actions/events";
+import type { Event } from "@/app/actions/events";
 
-export default function EventsCalendarSection() {
+interface EventsCalendarSectionProps {
+  events?: Event[];
+}
+
+export default function EventsCalendarSection({ events = [] }: EventsCalendarSectionProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [events, setEvents] = useState<Event[]>([]);
-  const [loading, setLoading] = useState(true);
+  // const [events, setEvents] = useState<Event[]>([]);
+  // const [loading, setLoading] = useState(true);
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const data = await getEvents();
-        setEvents(data);
-      } catch (error) {
-        console.error("Error fetching events:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchEvents();
-  }, []);
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     try {
+  //       const data = await getEvents();
+  //       setEvents(data);
+  //     } catch (error) {
+  //       console.error("Error fetching events:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchEvents();
+  // }, []);
 
   // Helper to get days in month
   const getDaysInMonth = (date: Date) => {
@@ -72,19 +76,7 @@ export default function EventsCalendarSection() {
            currentDate.getFullYear() === today.getFullYear();
   };
 
-  if (loading) {
-    return (
-      <section className="py-16 bg-[#08080A]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-          <div className="bg-[#121214] p-8 border border-white/5 rounded-lg">
-            <div className="h-96 flex items-center justify-center">
-              <div className="text-gray-400">Loading calendar...</div>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
+
 
   return (
     <section className="py-16 bg-[#08080A]">

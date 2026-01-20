@@ -5,6 +5,13 @@ import { ArrowLeft, Calendar, User } from "lucide-react";
 import Link from "next/link";
 import blogsData from "../../../data/blogs.json";
 
+
+export async function generateStaticParams() {
+  return blogsData.map((blog) => ({
+    id: blog.id,
+  }));
+}
+
 export default async function BlogDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const blog = blogsData.find(b => b.id === id);

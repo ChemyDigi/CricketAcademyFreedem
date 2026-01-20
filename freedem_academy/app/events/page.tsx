@@ -7,7 +7,11 @@ import UpcomingEvents from "../../components/events/UpcomingEvents";
 import SignatureEvents from "../../components/events/SignatureEvents";
 import { PastScoresTable, WinnersHighlight } from "../../components/events/EventsWidgets";
 
-export default function EventsPage() {
+import { getEvents } from "../../app/actions/events";
+
+export default async function EventsPage() {
+  const events = await getEvents();
+
   return (
     <main className="min-h-screen bg-[#0B0B0D]">
 
@@ -18,9 +22,9 @@ export default function EventsPage() {
 
       />
       
-      <EventsCalendarSection />
+      <EventsCalendarSection events={events} />
 
-      <UpcomingEvents />
+      <UpcomingEvents events={events} />
 
       <SignatureEvents />
 

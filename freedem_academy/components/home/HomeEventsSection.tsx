@@ -1,51 +1,42 @@
-"use client";
+// 'use client';
+'use client';
 
 import { useEffect, useState } from "react";
 import EventCard from "../shared/EventCard";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { getEvents, Event } from "@/app/actions/events";
+import type { Event } from "@/app/actions/events";
 
-export default function HomeEventsSection() {
-  const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
-  const [loading, setLoading] = useState(true);
+interface HomeEventsSectionProps {
+  events?: Event[];
+}
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const data = await getEvents();
-        const upcoming = data
-          .filter((e) => e.status === "upcoming")
-          .slice(0, 3);
-        setUpcomingEvents(upcoming);
-      } catch (error) {
-        console.error("Error fetching events:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+export default function HomeEventsSection({ events = [] }: HomeEventsSectionProps) {
+  // const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
+  // const [loading, setLoading] = useState(true);
 
-    fetchEvents();
-  }, []);
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     try {
+  //       const data = await getEvents();
+  //       // ... logic moved to render
+  //     } ...
+  //   };
+  //   fetchEvents();
+  // }, []);
 
-  if (loading) {
-    return (
-      <section className="py-24 bg-[#0B0B0D] relative">
-        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-64 bg-gray-800 animate-pulse rounded-lg"></div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const upcomingEvents = events
+    .filter((e) => e.status === "upcoming")
+    .slice(0, 3);
 
-  if (!loading && upcomingEvents.length === 0) {
+  // if (loading) ... removed
+
+  if (upcomingEvents.length === 0) {
     return null;
   }
+
+
 
   return (
     <section className="py-10 bg-[#0B0B0D] relative">

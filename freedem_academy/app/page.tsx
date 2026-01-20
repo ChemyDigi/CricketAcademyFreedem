@@ -8,7 +8,11 @@ import HomeEventsSection from "../components/home/HomeEventsSection";
 import FacilitiesSection from "../components/home/FacilitiesSection";
 import Footer from "../components/shared/Footer";
 
-export default function Home() {
+import { getEvents } from "../app/actions/events";
+
+export default async function Home() {
+  const events = await getEvents();
+
   return (
     <main className="min-h-screen bg-[#0B0B0D]">
 
@@ -21,7 +25,7 @@ export default function Home() {
       <HomeIntroSection />
       <HomeServicesSection />
       <HomePackagesSection />
-      <HomeEventsSection />
+      <HomeEventsSection events={events} />
       <FacilitiesSection />
       <Footer />
     </main>

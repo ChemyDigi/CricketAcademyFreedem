@@ -1,42 +1,39 @@
+// 'use client'; // No longer needs to be client if it's just rendering props, but framer-motion requires client
 'use client';
 
-import { useEffect, useState } from "react";
 import EventCard from "../shared/EventCard";
 import { motion } from "framer-motion";
-import { getEvents, Event } from "@/app/actions/events";
+import type { Event } from "@/app/actions/events";
 
-export default function UpcomingEvents() {
-  const [events, setEvents] = useState<Event[]>([]);
-  const [loading, setLoading] = useState(true);
+interface UpcomingEventsProps {
+  events?: Event[];
+}
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const data = await getEvents();
-        setEvents(data);
-      } catch (error) {
-        console.error("Error fetching events:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+export default function UpcomingEvents({ events = [] }: UpcomingEventsProps) {
+  // const [events, setEvents] = useState<Event[]>([]);
+  // const [loading, setLoading] = useState(true);
 
-    fetchEvents();
-  }, []);
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     try {
+  //       const data = await getEvents();
+  //       setEvents(data);
+  //     } catch (error) {
+  //       console.error("Error fetching events:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchEvents();
+  // }, []);
 
-  if (loading) {
-    return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[1, 2, 3].map((i) => (
-          <div key={i} className="h-64 bg-gray-800 animate-pulse rounded-lg"></div>
-        ))}
-      </div>
-    );
-  }
-
-  if (!loading && events.length === 0) {
+  if (events.length === 0) {
     return null;
   }
+
+
+
+
 
   return (
     <section className="py-20 bg-[#0B0B0D]">

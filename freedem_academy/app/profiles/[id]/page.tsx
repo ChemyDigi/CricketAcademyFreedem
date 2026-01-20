@@ -8,6 +8,11 @@ import CoachTabs from "../../../components/shared/CoachTabs";
 
 // This would typically fetch data based on params.id
 // For SSG/SSR you'd use generateStaticParams or standard fetch
+export async function generateStaticParams() {
+  return coachesData.map((coach) => ({
+    id: coach.id,
+  }));
+}
 
 export default async function CoachDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
