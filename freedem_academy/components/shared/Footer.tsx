@@ -114,8 +114,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-600">
-          &copy; {new Date().getFullYear()} Freedem Cricket Academy. All rights reserved.
+        <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-600 flex flex-col md:flex-row justify-between items-center gap-2">
+          <p>&copy; {new Date().getFullYear()} Freedem Cricket Academy. All rights reserved.</p>
+          <p>
+            Developed by{" "}
+            <a
+              href="http://www.alchemy.lk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-poppins lowercase hover:text-white transition-colors"
+            >
+              alchemy
+            </a>
+          </p>
         </div>
       </div>
     </footer>
