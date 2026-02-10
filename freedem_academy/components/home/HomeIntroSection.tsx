@@ -53,10 +53,14 @@ export default function HomeIntroSection() {
               Forging <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-600">Champions</span> of Tomorrow
             </h2>
 
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              We don’t just teach cricket; we cultivate character, discipline, and excellence. 
-              With world-class facilities and expert coaching, Freedem Academy is the ultimate 
-              launchpad for your cricketing career.
+            <p className="text-gray-400 text-lg leading-relaxed mb-8 text-justify">
+              Founded in 2014, the Freedem Cricket Sport Academy has
+swiftly become a prominent name in UAE's cricketing
+landscape. Operating across three centers in Oud Metha,
+Motor City, and Adjman. our academy stands as a testament to
+rapid growth. Offering top notch coaching and cutting edge
+facilities, we provide aspiring cricketers with an optimal
+environment to excel in the sport
             </p>
 
             {/* Stats Row */}

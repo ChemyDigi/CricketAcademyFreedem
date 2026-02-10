@@ -5,22 +5,34 @@ import { motion } from "framer-motion";
 
 const facilities = [
   {
-    name: "Indoor Nets",
-    description: "Climate-controlled indoor nets with advanced bowling machines.",
-    image:
-      "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    name: "Grounds",
+    description: "Natural grass and AstroTurf grounds for versatile training experiences.",
+    image: "/facilities/grounds.jpg",
   },
   {
-    name: "Main Ground",
-    description: "International standard turf wickets and lush green outfield.",
-    image:
-      "https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    name: "Practice Nets",
+    description: "Floodlit practice nets allowing for extended training sessions.",
+    image: "/facilities/practice_net.png",
   },
   {
-    name: "Gymnasium",
-    description: "High-performance gym dedicated to cricket-specific conditioning.",
-    image:
-      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    name: "Bowling Machines",
+    description: "Advanced bowling machines for consistent and varied delivery practice.",
+    image: "/facilities/bowling_machines.png",
+  },
+  {
+    name: "Fielding Equipment",
+    description: "Specialized fielding drill equipment to sharpen reflexes and agility.",
+    image: "/facilities/feilding_equpments.png",
+  },
+  {
+    name: "Pavilion & Auditorium",
+    description: "Pavilion and analysis auditorium for team meetings and strategy sessions.",
+    image: "/facilities/pavillion.jpg",
+  },
+  {
+    name: "Performance Analysis",
+    description: "High-speed video performance analysis to fine-tune techniques.",
+    image: "/facilities/performance_analysis.png",
   },
 ];
 
