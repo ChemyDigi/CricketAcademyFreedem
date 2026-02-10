@@ -6,6 +6,7 @@ import StatsSection from "../../components/about/StatsSection";
 import { AboutIntro, AboutDetails } from "../../components/about/AboutSections";
 import CoachesGrid from "../../components/about/CoachesGrid"; // Reusing CoachesGrid
 import InstagramFeed from "../../components/about/InstagramFeed";
+import Timeline from "../../components/about/Timeline";
 
 export default function AboutPage() {
   return (
@@ -19,6 +20,7 @@ export default function AboutPage() {
       <AboutIntro />
       <StatsSection />
       <AboutDetails />
+      <Timeline />
       <div className="py-10 bg-[#0B0B0D]">
          <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-white uppercase">Meet Our Mentors</h2>
