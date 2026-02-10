@@ -2,6 +2,7 @@
 
 import HeroSection from "../components/shared/HeroSection";
 import HomeIntroSection from "../components/home/HomeIntroSection";
+import AcademyPrograms from "../components/home/AcademyPrograms";
 import HomeServicesSection from "../components/home/HomeServicesSection";
 import HomePackagesSection from "../components/home/HomePackagesSection";
 import HomeEventsSection from "../components/home/HomeEventsSection";
@@ -23,6 +24,7 @@ export default async function Home() {
         backgroundImage="/home/hero.png" 
       />
       <HomeIntroSection />
+      <AcademyPrograms />
       <HomeServicesSection />
       <HomePackagesSection />
       <HomeEventsSection events={events} />

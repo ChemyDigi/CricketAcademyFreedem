@@ -5,6 +5,7 @@ import Footer from "../../components/shared/Footer";
 import ServicesIntro from "../../components/services/ServicesIntro";
 import ServicesGrid from "../../components/services/ServicesGrid";
 import TrainingPackagesSection from "../../components/services/TrainingPackagesSection";
+import TrainingDetailsTabs from "../../components/services/TrainingDetailsTabs";
 
 export default function ServicesPage() {
   return (
@@ -17,6 +18,7 @@ export default function ServicesPage() {
       />
       <ServicesIntro />
       <ServicesGrid />
+      <TrainingDetailsTabs />
       <TrainingPackagesSection />
       <Footer />
     </main>
