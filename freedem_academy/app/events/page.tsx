@@ -7,6 +7,7 @@ import UpcomingEvents from "../../components/events/UpcomingEvents";
 import SignatureEvents from "../../components/events/SignatureEvents";
 import TournamentsDetail from "../../components/events/TournamentsDetail";
 import { PastScoresTable, WinnersHighlight } from "../../components/events/EventsWidgets";
+import VictoryTitles from "../../components/events/VictoryTitles";
 
 import { getEvents } from "../../app/actions/events";
 
@@ -26,6 +27,9 @@ export default async function EventsPage() {
       <EventsCalendarSection events={events} />
 
       <UpcomingEvents events={events} />
+
+      
+      <VictoryTitles />
       
       <TournamentsDetail />
 

@@ -63,62 +63,7 @@ facilities, we provide aspiring cricketers with an optimal
 environment to excel in the sport
             </p>
 
-            {/* Stats Row */}
-            <motion.div
-              className="flex flex-wrap gap-4 mb-10"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.2 }
-                }
-              }}
-            >
-              {/* Stat 1 */}
-              <motion.div
-                className="flex items-center gap-2 pr-6 border-r border-white/10"
-                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              >
-                <Trophy className="text-primary w-6 h-6" />
-                <div>
-                  <span className="block text-2xl font-bold text-white">
-                    <CountUp to={25} duration={1.2} />+
-                  </span>
-                  <span className="text-xs text-gray-500 uppercase">Trophies Won</span>
-                </div>
-              </motion.div>
 
-              {/* Stat 2 */}
-              <motion.div
-                className="flex items-center gap-2 pr-6 border-r border-white/10"
-                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              >
-                <Users className="text-primary w-6 h-6" />
-                <div>
-                  <span className="block text-2xl font-bold text-white">
-                    <CountUp to={500} duration={1.5} />+
-                  </span>
-                  <span className="text-xs text-gray-500 uppercase">Students</span>
-                </div>
-              </motion.div>
-
-              {/* Stat 3 */}
-              <motion.div
-                className="flex items-center gap-2"
-                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              >
-                <Star className="text-primary w-6 h-6" />
-                <div>
-                  <span className="block text-2xl font-bold text-white">
-                    <CountUp to={15} duration={1.2} />+
-                  </span>
-                  <span className="text-xs text-gray-500 uppercase">Years Exp.</span>
-                </div>
-              </motion.div>
-            </motion.div>
 
             <Link
               href="/about"

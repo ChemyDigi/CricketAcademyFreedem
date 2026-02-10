@@ -43,6 +43,13 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
+
 
 
   return (
@@ -68,13 +75,13 @@ export default function NavBar() {
                   href={link.href}
                   className={clsx(
                     "relative px-3 py-2 text-sm font-medium transition-colors duration-300 uppercase tracking-wide",
-                    pathname === link.href
+                    isActive(link.href)
                       ? "text-primary"
                       : "text-gray-300 hover:text-white"
                   )}
                 >
                   {link.name}
-                  {pathname === link.href && (
+                  {isActive(link.href) && (
                     <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full" />
                   )}
                 </Link>
@@ -102,7 +109,7 @@ export default function NavBar() {
                 href={link.href}
                 className={clsx(
                   "block px-3 py-2 rounded-md text-base font-medium uppercase tracking-wide",
-                  pathname === link.href
+                  isActive(link.href)
                     ? "text-primary bg-white/5"
                     : "text-gray-300 hover:text-white hover:bg-white/5"
                 )}
